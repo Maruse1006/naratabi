@@ -1,0 +1,19 @@
+.content{
+  width:50%;
+}
+.title{
+  position:absolute;
+ top:120px;
+ left:120px;
+ font-size: 25px;
+ margin-top:20px;
+ color:#F4F5FA;
+}
+
+header{
+  background-color:#000000;
+  color:#FFFFFF;
+  width:700px;
+  height:40px;
+  position:relative;
+}

@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Place;
+
+use App\Gift;
+
+use App\Category;
+
+use Illuminate\Http\Request;
+
+
+
+class PlaceController extends Controller{
+  public function index(Request $request){
+  // $items =Place::all();
+  return view('place.index');
+}
+
+public function find(Request $request)
+{
+  return view('place.find',['input' =>'']);
+}
+
+public function search(Request $request)
+{
+  $category = Category::where('name',$request->input)->first();
+
+    $places = Place::where('category_id',$category['id'])->get();
+    
+  $param = ['input'=>$request->input,'items'=>$places];
+
+
+  return view('place.find',$param);
+}
+
+}
