@@ -19,10 +19,6 @@
     </a>
   </header>
 
-<img src="{{ asset('img/shika.jpg') }}" />
- <div class="title">
-  <p>鹿と大仏だけじゃない奈良を知る</p>
- </div>
 
    <nav id="nav">
      <ul>
@@ -35,13 +31,8 @@
      </ul>
    </nav>
  </main>
-
- <form action="/place/find" method="post">
-  {{csrf_field()}}
-<div class="search">
-  <input type="text" name="input">
-  <input type="submit" value="find">
-</div>
+  <h1>{{$post->title}}</h1>
+  <p>{{!! nl2br(e($post->body))!!}}</p>
 
 </div>
  </form>
