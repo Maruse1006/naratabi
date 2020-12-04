@@ -32,18 +32,15 @@
    @foreach($items as $item )
    <div class="box">
     <div class="block">
-      <!--action() コントローラーとメソッドを指定する記述
-      （Postsコントローラーのshowメソッド）
-    -->
-    <!--<li><a href="{{action('PostConroller@show,$post->id')}}">{{$post->title}}</a></li>-->
-    <p><a href="{{action('PostsController@show',$post->id)}}" >詳細</a></p>
-     <span>{{$item->place}}</span><br />
-    　  <img src="{{$item->img_url}}"  />
+
+    <p><a href="{{route('place.show',[$items->id])}}"></a></p>
+     <span>{{$items->place}}</span><br />
+       <img src="{{$item->img_url}}"  />
     </div>
-    　　<br/>
-  　　　　</br/>
-    　概要<br/>
-   　　{{$item->summary}}
+      <br/>
+      </br/>
+     概要<br/>
+     {{$items->summary}}
    </div>
    @endforeach
  </div>

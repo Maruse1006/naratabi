@@ -28,11 +28,19 @@ public function search(Request $request)
   $category = Category::where('name',$request->input)->first();
 
     $places = Place::where('category_id',$category['id'])->get();
-    
+
   $param = ['input'=>$request->input,'items'=>$places];
 
 
   return view('place.find',$param);
+}
+//showアクション以外は省略
+public function show(Request $request)
+{
+  $places=Place::find($id);
+
+  //viewにデータを渡す
+  return view('place.show',['items'=>$places]);
 }
 
 }

@@ -18,10 +18,10 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HelloController;
 
 
-Route::get('hello','HelloController@index');
+//Route::get('hello','HelloController@index');
 
 
-Route::resource('/posts', 'PostsController');
+Route::resource('posts', 'PostController');
 Route::get('posts', 'PostController@getSearch');
 //追加
 //Route::get('/posts/{id}','PostsController@show');
@@ -32,7 +32,12 @@ Route::post('/hello','HelloController@search');
 
 Route::get('place','PlaceController@index');
 Route::post('place/find','PlaceController@search');
-Route::post('place/gift','GiftController@search');
 
-Route::resource('place', 'PostsController', ['only' => ['index', 'show']]);
-Route::get('/posts/{id}','PostsConroller@show');
+Route::get('place/{id}','PlaceController@show');
+//Route::post('place/gift','GiftController@search');
+
+//Route::resource('place', 'PostController', ['only' => ['index', 'show']]);
+//Route::get('/posts/{id}','PostsConroller@show
+//Route::get('/posts','PostController@index'->name('post.index');
+
+//Route::get('/post/{id}','PostController@show')->name('post.show');
