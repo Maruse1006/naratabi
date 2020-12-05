@@ -31,8 +31,8 @@
      </ul>
    </nav>
  </main>
-  
-  <p>{{$items->place}}<p>
+
+  <p>{{$item->place}}<p>
 </div>
  </form>
  </body>

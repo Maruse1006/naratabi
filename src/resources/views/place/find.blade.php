@@ -33,7 +33,7 @@
    <div class="box">
     <div class="block">
 
-    <p><a href="{{route('place.show',[$items->id])}}"></a></p>
+    <p><a href="{{action('place.show',[$item->id])}}"></a></p>
      <span>{{$items->place}}</span><br />
        <img src="{{$item->img_url}}"  />
     </div>
