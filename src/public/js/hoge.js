@@ -13,3 +13,7 @@
     //this.nextElementSibling.classList.toggle("acttive");
   //})
 //}
+ function disp(){
+   document.getElementById("text1").innerHTML="<span style='color:red;'>神社・寺
+   </span>";
+ }

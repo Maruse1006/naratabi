@@ -36,6 +36,7 @@ Route::get('place','PlaceController@index');
 Route::post('place/find','PlaceController@search');
 
 Route::get('place/find/{id}','PlaceController@show')->name('place.show');
+
 //Route::post('place/find/{id}','PlaceController@show')->name('place.show');
 //Route::post('place/gift','GiftController@search');
 

@@ -6,6 +6,7 @@ use App\Place;
 
 use App\Gift;
 
+
 use App\Category;
 
 use Illuminate\Http\Request;
@@ -35,7 +36,7 @@ public function search(Request $request)
   return view('place.find',$param);
 }
 //showアクション以外は省略
-public function show(Request $request)
+public function show(Request $request,$id)
 {
   $places=Place::find($id);
 

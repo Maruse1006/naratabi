@@ -31,14 +31,48 @@
      </ul>
    </nav>
  </main>
+ <div class="main">
+ <img src="{{asset('img/daibutsu.jpg')}}" />
 
-  <p>{{$item->place}}<p>
+ <div class="title">
+ <p1>詳細ページ</p>
+ </div>
+  <div class="box">
+   <p>{{$items->place}}<p>
+  </div>
 </div>
+
  </form>
  </body>
 </html>
 
 <style>
+.main img{
+  position:absolute;
+  height:120px;
+  width:235%;
+  top:40px;
+  z-index: 10;
+  }
+}
+.main {
+  position:relative;
+  height:100px;
+  top:50px;
+}
+.box{
+  position:relative;
+  top:100px;
+  margin-left: auto;
+  align-items: center;
+}
+.title{
+  z-index:20;
+  top:30px;
+  color:#FFFFFF;
+
+}
+
 </style>
 <scrpt>
 

@@ -16,7 +16,7 @@
     </a>
   </header>
  <div class="img">
- <img src="{{asset('img/daibutsu.jpg')}}" style/>
+ <img src="{{asset('img/daibutsu.jpg')}}" width="20px" height="30"/>
 </div>
  <div class="title">
  <p1>神社・寺の詳細結果</p>
@@ -34,8 +34,9 @@
     <div class="block">
 
     <p><a href="{{action('place.show',[$item->id])}}"></a></p>
+  <!-- <li><a href="{{action('PlaceController@show',$item->id)}}">-->
      <span>{{$items->place}}</span><br />
-       <img src="{{$item->img_url}}"  />
+       <img src="{{$items->img_url}}"  />
     </div>
       <br/>
       </br/>

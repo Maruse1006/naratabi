@@ -39,7 +39,8 @@
  <form action="/place/find" method="post">
   {{csrf_field()}}
 <div class="search">
-  <input type="text" name="input">
+
+  <input type="text" id="text1" value="奈良 "name="input">
   <input type="submit" value="find">
 </div>
 
