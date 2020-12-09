@@ -14,6 +14,8 @@
   //})
 //}
  function disp(){
-   document.getElementById("text1").innerHTML="<span style='color:red;'>神社・寺
-   </span>";
+   document.getElementById("input_message").value="神社・寺";
+ }
+ function disp(){
+   document.getElementById("input_press").value="お土産";
  }

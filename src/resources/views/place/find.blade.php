@@ -7,6 +7,7 @@
   <title>Drawer</title>
   <link rel="style.css" type="text/css" href="css/stylesheet.css">
 </head>
+<div class="hwrapper">
 <header>
     なら旅net
    <a class="menuButton" id="menuButton">
@@ -15,8 +16,9 @@
       <div> </div>
     </a>
   </header>
+</div>
  <div class="img">
- <img src="{{asset('img/daibutsu.jpg')}}" width="20px" height="30"/>
+ <img src="{{asset('img/daibutsu.jpg')}}" width="600" height="150" />
 </div>
  <div class="title">
  <p1>神社・寺の詳細結果</p>
@@ -32,34 +34,38 @@
    @foreach($items as $item )
    <div class="box">
     <div class="block">
-
-    <p><a href="{{action('place.show',[$item->id])}}"></a></p>
+    <p><a href="{{action('PlaceController@show',[$item->id])}}"
+      class="btn btn-primary btn-primary btn-sm"><span>{{$item->place}}</span><br /></a></p>
   <!-- <li><a href="{{action('PlaceController@show',$item->id)}}">-->
-     <span>{{$items->place}}</span><br />
-       <img src="{{$items->img_url}}"  />
-    </div>
-      <br/>
-      </br/>
-     概要<br/>
-     {{$items->summary}}
+  </tr>
+       <img src="{{$item->img_url}}"  />
    </div>
    @endforeach
  </div>
+</div>
+
+
  @endif
 <style>
-.
+.hwrapper{
+  width:100%;
+}
 .content{
-
+display:flex;
+flex-wrap: wrap;
 }
-.content div{
 
-}
 header{
   background-color:#000000;
+  margin:auto;
+  max-width:800px;
   color:#FFFFFF;
   width:605px;
   height:40px;
   position:relative;
+}
+.span{
+  color:#FFFFFF;
 }
 
 .title{
@@ -78,6 +84,11 @@ header{
 span{
   color:##99CC33;
 }
+.img{
+  display: block;
+  text-align: center;
+}
+
 .box img{
   height:100px;
   margin:auto;
@@ -86,6 +97,8 @@ span{
 .block{
   display:block;
   text-align: center;
+  display:flex;
+  flex-wrap:wrap;
 }
 </style>
 

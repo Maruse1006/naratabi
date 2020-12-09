@@ -39,10 +39,15 @@
  <form action="/place/find" method="post">
   {{csrf_field()}}
 <div class="search">
-
-  <input type="text" id="text1" value="奈良 "name="input">
+  <input type="text" id="input_message" id="input_press" value="奈良 "name="input">
   <input type="submit" value="find">
 </div>
+ <form>
+   <input type="button" value="神社・寺" onClick="disp()">
+ </form>
+ <form>
+   <input type="button" value="お土産" onClick="disp()">
+ </form>
 
 </div>
  </form>

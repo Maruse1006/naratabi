@@ -31,26 +31,33 @@
      </ul>
    </nav>
  </main>
- <div class="main">
- <img src="{{asset('img/daibutsu.jpg')}}" />
 
- <div class="title">
- <p1>詳細ページ</p>
+
+ <div class="content">
+   <div class="box">
+    <div class="block">
+
+     <span>{{$items->place}}</span><br />
+       <img src="{{$items->img_url}}"  />
+    </div>
+      <br/>
+      </br/>
+     概要<br/>
+     {{$items->summary}}
+   </div>
  </div>
-  <div class="box">
-   <p>{{$items->place}}<p>
-  </div>
-</div>
-
  </form>
  </body>
 </html>
 
 <style>
+header{
+  width:50%;
+}
 .main img{
   position:absolute;
   height:120px;
-  width:235%;
+  width:120%;
   top:40px;
   z-index: 10;
   }
@@ -63,8 +70,12 @@
 .box{
   position:relative;
   top:100px;
-  margin-left: auto;
-  align-items: center;
+  display:inline;
+  text-align:center;
+}
+.box img{
+  width:50%;
+  height:50%;
 }
 .title{
   z-index:20;
