@@ -31,12 +31,9 @@
      </ul>
    </nav>
  </main>
-
-
  <div class="content">
    <div class="box">
     <div class="block">
-
      <span>{{$items->place}}</span><br />
        <img src="{{$items->img_url}}"  />
     </div>

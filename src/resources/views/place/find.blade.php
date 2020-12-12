@@ -35,10 +35,12 @@
    <div class="box">
     <div class="block">
     <p><a href="{{action('PlaceController@show',[$item->id])}}"
-      class="btn btn-primary btn-primary btn-sm"><span>{{$item->place}}</span><br /></a></p>
+      class="btn btn-primary btn-primary btn-sm">
+      <tr>
+      <span>{{$item->place}}</span><tr/></a></p>
   <!-- <li><a href="{{action('PlaceController@show',$item->id)}}">-->
-  </tr>
        <img src="{{$item->img_url}}"  />
+     </tr>
    </div>
    @endforeach
  </div>
@@ -47,20 +49,15 @@
 
  @endif
 <style>
-.hwrapper{
-  width:100%;
-}
+
 .content{
-display:flex;
-flex-wrap: wrap;
+
 }
 
 header{
   background-color:#000000;
-  margin:auto;
-  max-width:800px;
   color:#FFFFFF;
-  width:605px;
+  width:100%;
   height:40px;
   position:relative;
 }
@@ -77,7 +74,7 @@ header{
 
 }
 .box{
-  width:40%;
+  width:100%;
   justify-content: space-between
   padding:40px;
 }
@@ -87,6 +84,7 @@ span{
 .img{
   display: block;
   text-align: center;
+  width:100%;
 }
 
 .box img{
@@ -98,7 +96,7 @@ span{
   display:block;
   text-align: center;
   display:flex;
-  flex-wrap:wrap;
+  float:left;
 }
 </style>
 

@@ -42,37 +42,3 @@
    @endforeach
  </div>
  @endif
-<style>
-.content{
-  display:flex;
-  flex-wrap: wrap;
-  /*width:40%;*/
-}
-header{
-  background-color:#000000;
-  color:#FFFFFF;
-  width:605px;
-  height:40px;
-  position:relative;
-}
-
-.title{
-  position:absolute;
-  top:90px;
-  left:70px;
-  color:#F4F5FA;
-}
-
-
-}
-.box{
-  width:40%;
-}
-.box img{
-  height:100px;
-}
-</style>
-
-@section('footer')
-copyright
-@endsection

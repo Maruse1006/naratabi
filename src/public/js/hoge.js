@@ -6,16 +6,13 @@
 })
 });
 
-//const parentMenu = document.querySelectorAll(".menu>li>a");
-//for(let i =0; i<parentMenu.length;i++){
-  //parentMenu[i].addEventListener("click",funtion(){
 
-    //this.nextElementSibling.classList.toggle("acttive");
-  //})
-//}
- function disp(){
+ function jinjya(){
    document.getElementById("input_message").value="神社・寺";
  }
- function disp(){
-   document.getElementById("input_press").value="お土産";
+ function miyage(){
+   document.getElementById("input_message").value="お土産";
+ }
+ function hotel(){
+   document.getElementById("input_message").value="宿";
  }
