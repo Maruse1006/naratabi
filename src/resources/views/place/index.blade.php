@@ -39,7 +39,7 @@
  <form action="/place/find" method="post">
   {{csrf_field()}}
 <div class="search">
-  <input type="text" id="input_message"  value="奈良 "name="input"style="border-radius:10px;",height="30px;" >
+  <input type="text" id="input_message"  value="奈良 "name="input"style="border-radius:10px;" >
   <input type="submit" value="find">
 </div>
  <div class="tab">
@@ -55,7 +55,7 @@
    </div>
    <div class="hotel">
    <form>
-    <input type="button" value="宿" onClick="hotel()" style="width:80px;","border-radius:30px;">
+    <input type="button" value="宿" onClick="hotel()" style= "border-radius:30px","width:30%;">
    </form>
   </div>
  </div>

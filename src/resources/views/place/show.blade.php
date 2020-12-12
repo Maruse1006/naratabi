@@ -17,9 +17,10 @@
       <div> </div>
       <div> </div>
     </a>
-  </header>
-
-
+</header>
+  <div class="img">
+    <img src="{{asset('img/daibutsu.jpg')}}" width="100%" height="150"  />
+  </div>
    <nav id="nav">
      <ul>
        <li><a href="index.html">トップへ戻る</a></li>
@@ -49,7 +50,7 @@
 
 <style>
 header{
-  width:50%;
+  width:100%;
 }
 .main img{
   position:absolute;
@@ -78,10 +79,10 @@ header{
   z-index:20;
   top:30px;
   color:#FFFFFF;
-
 }
-
+.content{
+  margin:auto;
+  width:100%;
+  
+}
 </style>
-<scrpt>
-
-</scrpt>

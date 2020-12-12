@@ -94,7 +94,7 @@ left:30%;
 }
 
 nav{
-  width:400px;
+  width:100%;
   position:absolute;
   height:450px;
   top:48px;
@@ -114,5 +114,5 @@ nav.active{
   opacity:1;
   visibility: visible;
   right:25px;
-  width:400px;
+  width:100%;
 }

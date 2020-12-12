@@ -18,7 +18,7 @@
   </header>
 </div>
  <div class="img">
- <img src="{{asset('img/daibutsu.jpg')}}" width="600" height="150" />
+ <img src="{{asset('img/daibutsu.jpg')}}" width="100%" height="150"  />
 </div>
  <div class="title">
  <p1>神社・寺の詳細結果</p>
@@ -34,20 +34,20 @@
    @foreach($items as $item )
    <div class="box">
     <div class="block">
-    <p><a href="{{action('PlaceController@show',[$item->id])}}"
+      <p><a href="{{action('PlaceController@show',[$item->id])}}"
       class="btn btn-primary btn-primary btn-sm">
-      <tr>
       <span>{{$item->place}}</span><tr/></a></p>
-  <!-- <li><a href="{{action('PlaceController@show',$item->id)}}">-->
        <img src="{{$item->img_url}}"  />
-     </tr>
-   </div>
+    </div>
    @endforeach
  </div>
 </div>
 
 
  @endif
+ @section('footer')
+ copyright
+ @endsection
 <style>
 
 .content{
@@ -95,11 +95,7 @@ span{
 .block{
   display:block;
   text-align: center;
-  display:flex;
+  width:50%;
   float:left;
 }
 </style>
-
-@section('footer')
-copyright
-@endsection
