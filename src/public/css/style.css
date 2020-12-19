@@ -22,11 +22,11 @@ header{
 }
 
 .search{
-
+  position:absolute;
   top:30%;
   left:30%;
   padding-top:80px;
-  position:fixed;
+
 }
 
 .shrine{
@@ -94,37 +94,20 @@ left:30%;
 }
 
 nav{
-  width:100%;
+  background:#FFCC99;
   position:absolute;
-  height:450px;
-  top:48px;
-  left:410px;
-  color:#000000;
-  right:30px;
-  opacity: 0;
-  visibility: hidden;
-  transition:.3s;
-  float:right;
-  background-color:#C0C0C0;
-  z-index:100;
-  transform:translateX(-100%);
-
+  z-index:1;
+  top:3.0rem;
+  right:0;
+  overflow-x:hidden;
+  transition:.5s;
+  width:0;
+  height:100%
 }
 nav.active{
   opacity:1;
-  visibility: visible;
-  right:25px;
   width:100%;
-}
-.fadeout{
-opacity: 0;
-transition: 3s ease-in-out;
--webkit-transition: 3s ease-in-out;
-}
-.fadein{
-opacity: 1;
-transition: 3s ease-in-out;
--webkit-transition: 3s ease-in-out;
+  right:5px;
 }
 </style>
 

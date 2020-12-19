@@ -19,7 +19,7 @@
     </a>
 </header>
   <div class="img">
-    <img src="{{asset('img/daibutsu.jpg')}}" width="100%" height="150"  />
+    <img src="{{asset('img/tokae.jpg')}}" width="100%" height="150"  />
   </div>
    <nav id="nav">
      <ul>

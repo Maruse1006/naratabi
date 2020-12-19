@@ -13,13 +13,12 @@
 <!--<script src="<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>"-->
  <script src="{{ asset('js/hoge.js') }}"></script>
  <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+ 
 </head>
 <body>
   <div class="hwrapper">
     <header>
     なら旅net
-  <!--  <script src="{{asset('js/my_script.js')}}"></script>-->
-
  <a class="menuButton" id="menuButton">
       <div> </div>
       <div> </div>

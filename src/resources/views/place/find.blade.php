@@ -18,7 +18,7 @@
   </header>
 </div>
  <div class="img">
- <img src="{{asset('img/daibutsu.jpg')}}" width="100%" height="150"  />
+ <img src="{{asset('img/tokae.jpg')}}" width="100%" height="150"  />
 </div>
  <div class="title">
  <p>神社・寺の詳細結果</p>
@@ -100,5 +100,63 @@ span{
 }
 p{
   top:10%;
+}
+.menuButton{
+  display:block;
+  position:absolute;
+  height:10px;
+  width:60px;
+  background:#000000;
+  position:absolute;
+  top:20px;
+  right:80px;
+  float:right;
+
+}
+.menuButton div{
+  height:6px;
+  width: 50px;
+  background:#707070;
+  position:absolute;
+  float:right;
+  top:2px;
+  left:120px;
+  transform: translate(-50%,-50%);
+  transition: .3s;
+}
+
+.menuButton div:nth-of-type(1){
+   transform: translate(-50%,-15px);
+}
+.menuButton div:nth-of-type(3){
+  transform:translate(-50%, 15px);
+}
+.menuButton.active div:nth-of-type(1){
+  transform: rotate(45deg) translate(-50%,0);
+  transform-origin:0% 50%;
+}
+.menuButton.active div:nth-of-type(2){
+  opacity: 0;
+}
+.menuButton.active div:nth-of-type(3){
+  transform:rotate(-45deg) translate(-50%,0px);
+  transform-origin:0% 50%;
+}
+
+nav{
+  background:#0bd;
+  position:absolute;
+  z-index:1;
+  top:3.0rem;
+  right:0;
+  overflow-x:hidden;
+  text-align:center;
+  transition:.5s;
+  width:0;
+}
+nav.active{
+  opacity:1;
+  width:100%;
+  right:5px;
 }
 </style>
