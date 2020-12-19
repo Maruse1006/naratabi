@@ -6,20 +6,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Drawer</title>
+  <link rel=rese>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">-->
+<!--<script src="<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>"-->
+ <script src="{{ asset('js/hoge.js') }}"></script>
+ <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
 </head>
 <body>
   <div class="hwrapper">
     <header>
     なら旅net
-    <script src="{{ asset('js/hoge.js') }}"></script>
-   <a class="menuButton" id="menuButton">
+  <!--  <script src="{{asset('js/my_script.js')}}"></script>-->
+
+ <a class="menuButton" id="menuButton">
       <div> </div>
       <div> </div>
       <div> </div>
     </a>
     </header>
   </div>
+
   <div class="part">
     <img src="{{ asset('img/shika.jpg') }}" style="width:100%;" />
   </div>
@@ -36,6 +44,7 @@
        <li><a href="">このサイトについて</a></li>
      </ul>
    </nav>
+
  <form action="/place/find" method="post">
   {{csrf_field()}}
 <div class="search">
@@ -58,7 +67,15 @@
     <input type="button" value="宿" onClick="hotel()" style= "border-radius:30px","width:30%;">
    </form>
   </div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">スライドー１</div>
+    <div class="swiper-slide">スライドー2
+    </div>
+    <div class="swiper-slide">スライドー3</div>
  </div>
+   <div class="swiper-button-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
  </form>
  </body>
 </html>

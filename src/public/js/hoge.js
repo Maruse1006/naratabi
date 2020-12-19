@@ -16,3 +16,18 @@
  function hotel(){
    document.getElementById("input_message").value="宿";
  }
+
+const mySwiper=new Swiper('.swiper-container',{
+  direction:'vertical',
+  loop:true,
+
+  pagination:{
+    el:'.swiper-pagination',
+    type:'bullets',
+    clickable:true,
+  },
+  navigation:{
+    nextEl:'.swiper-button-next',
+    prevEl:'.swiper-button-prev',
+  }
+});

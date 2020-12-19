@@ -36,12 +36,13 @@
    <div class="box">
     <div class="block">
      <span>{{$items->place}}</span><br />
-       <img src="{{$items->img_url}}"  />
-    </div>
+       <img src="{{$items->img_url}}"  /></br>
       <br/>
       </br/>
-     概要<br/>
-     {{$items->summary}}
+    <p> 概要</p><br/>
+     {{$items->summary}}</br>
+     <p>住所・アクセス</p></br>
+     {{$items->address}}
    </div>
  </div>
  </form>
@@ -80,9 +81,22 @@ header{
   top:30px;
   color:#FFFFFF;
 }
+
 .content{
   margin:auto;
   width:100%;
-  
+  padding-bottom:30%;
+}
+span{
+  text-decoration: underline;
+  font-weight:bold;
+  font-size: 30px;
+  line-height: 1.2;
+  color:#D75730;
+  font-family:serif;
+}
+p{
+  color:#D75730;
+  border-bottom:solid 3px;
 }
 </style>

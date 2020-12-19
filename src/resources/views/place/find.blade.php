@@ -21,7 +21,7 @@
  <img src="{{asset('img/daibutsu.jpg')}}" width="100%" height="150"  />
 </div>
  <div class="title">
- <p1>神社・寺の詳細結果</p>
+ <p>神社・寺の詳細結果</p>
  </div>
  <form action="/place/find" method="post">
   {{csrf_field()}}
@@ -97,5 +97,8 @@ span{
   text-align: center;
   width:50%;
   float:left;
+}
+p{
+  top:10%;
 }
 </style>
