@@ -8,11 +8,8 @@
   <title>Drawer</title>
   <link rel=rese>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-  <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
-  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">-->
-<!--<script src="<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>"-->
- <script src="{{ asset('js/hoge.js') }}"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.css" integrity="sha512-m3pAvNriL711NMlhkZHK6K4Tu2/RjtrzyjxZU8mlAbxxoDoURy27KajN1LGTLeEEPvaN12mKAgSCrYEwF9y0jA==" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js" integrity="sha512-1LlEYE0qExJ/GUfAJ0k2K2fB5sIvMv/q6ueo3syohvQ3ElWDQVSMUOf39cxaDWHtNu7M6lF6ZC1H6A1m3SvheA==" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="hwrapper">
@@ -62,20 +59,20 @@
    </div>
    <div class="hotel">
    <form>
-    <input type="button" value="宿" onClick="hotel()" style= "border-radius:30px","width:30%;">
+    <input type="button" value="宿" onClick="hotel()" style= "border-radius:30px width:30%;">
    </form>
   </div>
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">スライドー１</div>
-    <div class="swiper-slide">スライドー2
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">スライドー１</div>
+      <div class="swiper-slide">スライドー2</div>
+      <div class="swiper-slide">スライドー3</div>
     </div>
-    <div class="swiper-slide">スライドー3</div>
-  </div>
-   <div class="swiper-button-pagination"></div>
+    <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-  </div>
+</div>
+<script src="{{ asset('js/hoge.js') }}"></script>
  </form>
  </body>
 </html>
