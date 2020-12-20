@@ -12,8 +12,7 @@
   <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">-->
 <!--<script src="<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>"-->
  <script src="{{ asset('js/hoge.js') }}"></script>
- <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
- 
+
 </head>
 <body>
   <div class="hwrapper">
@@ -66,15 +65,17 @@
     <input type="button" value="宿" onClick="hotel()" style= "border-radius:30px","width:30%;">
    </form>
   </div>
+<div class="swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide">スライドー１</div>
     <div class="swiper-slide">スライドー2
     </div>
     <div class="swiper-slide">スライドー3</div>
- </div>
+  </div>
    <div class="swiper-button-pagination"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
+  </div>
  </form>
  </body>
 </html>
