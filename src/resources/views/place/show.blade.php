@@ -23,7 +23,7 @@
   </div>
    <nav id="nav">
      <ul>
-       <li><a href="index.html">トップへ戻る</a></li>
+       <li><a href="">トップへ戻る</a></li>
        <li><a href="">今日</a></li>
        <li><a href="">今週</a></li>
        <li><a href="">週末</a></li>
@@ -44,6 +44,9 @@
      <p>住所・アクセス</p></br>
      {{$items->address}}
    </div>
+   <iframe id='map' src='https://www.google.com/maps/embed/v1/place?key={{ config("services.google-map.apikey") }}&q={{ $items->place }}'
+  width='50%' height='300' margin-left:'10%' frameborder='0'></iframe>
+</script>
  </div>
  </form>
  </body>

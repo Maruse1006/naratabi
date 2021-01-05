@@ -14,10 +14,7 @@ use Illuminate\Http\Request;
 
 
 class PlaceController extends Controller{
-  public function index(Request $request){
-  // $items =Place::all();
-  return view('place.index');
-}
+
 
 public function find(Request $request)
 {
@@ -39,9 +36,16 @@ public function search(Request $request)
 public function show(Request $request,$id)
 {
   $places=Place::find($id);
-
   //viewにデータを渡す
   return view('place.show',['items'=>$places]);
+}
+public function index(Request $request)
+{
+  return view('place.index');
+}
+public function test(Request $request){
+
+  return view('place.test');
 }
 
 }

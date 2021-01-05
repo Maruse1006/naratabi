@@ -13,6 +13,27 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('api/test','TestAPIController@index');
+
+Route::get('/posts',function(){
+  $post= Post::create(['title'=>'my first post',
+   'slug'=>'my-first-post'
+]);
+
+return $post;
+});
+
+Route::get('/posts','PostConroller@index');
+
+//create route
+Route::post('/posts','PostConroller@index');
+
+//update
+Route::put('/posts', 'PostConroller@index');
+
+Route::delete('/posts','PostConroller@index');

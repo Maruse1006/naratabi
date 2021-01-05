@@ -90,6 +90,10 @@ p{
   transform:rotate(-45deg) translate(-50%,0px);
   transform-origin:0% 50%;
 }
+.swiper-container img{
+  
+
+}
 
 nav{
   background:#0bd;

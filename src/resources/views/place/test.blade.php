@@ -29,7 +29,7 @@
  </div>
    <nav id="nav">
      <ul>
-       <li><a href="{{url('/test')}}">トップへ戻る</a></li>
+       <li><a href="">トップへ戻る</a></li>
        <li><a href="">今日</a></li>
        <li><a href="">今週</a></li>
        <li><a href="">週末</a></li>
@@ -38,43 +38,7 @@
      </ul>
    </nav>
 
- <form action="/place/find" method="post">
-  {{csrf_field()}}
-<div class="search">
-  <input type="text" id="input_message"  value="奈良 "name="input"style="border-radius:10px;" >
-  <input type="submit" value="find">
-</div>
- <div class="tab">
-  <div class="shrine">
-    <form>
-     <input type="button" value="神社・寺" onClick="jinjya()" style="border-radius:30px;">
-    </form>
-  </div>
-    <div class="souvenir">
-    <form>
-     <input type="button" value="お土産" onClick="miyage()" style="border-radius:30px;">
-    </form>
-   </div>
-   <div class="hotel">
-   <form>
-    <input type="button" value="宿" onClick="miyage()" style="border-radius:30px;">
-   </form>
-  </div>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-          <div class="tav">
-            温泉特集
-          </div>
-         <img src="{{ asset('img/okame.jpg') }}"  />
-      </div>
-      <div class="swiper-slide"><img src="{{ asset('img/tanaka.jpg') }}"  /></div>
-      <div class="swiper-slide"><img src="{{ asset('img/daibutsu.jpg') }}"  /></div>
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-</div>
+ 
 <script src="{{ asset('js/hoge.js') }}"></script>
  </form>
  </body>

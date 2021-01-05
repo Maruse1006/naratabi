@@ -23,9 +23,7 @@ use App\Http\Controllers\PlaceController;
 //Route::get('hello','HelloController@index');
 
 
-Route::resource('posts', 'PostController');
-Route::get('posts', 'PostController@getSearch');
-//追加
+
 //Route::get('/posts/{id}','PostsController@show');
 
 
@@ -37,11 +35,6 @@ Route::post('place/find','PlaceController@search');
 
 Route::get('place/find/{id}','PlaceController@show')->name('place.show');
 
-//Route::post('place/find/{id}','PlaceController@show')->name('place.show');
-//Route::post('place/gift','GiftController@search');
-
-//Route::resource('place', 'PostController', ['only' => ['index', 'show']]);
-//Route::get('/posts/{id}','PostsConroller@show
-//Route::get('/posts','PostController@index'->name('post.index');
-
-//Route::get('/post/{id}','PostController@show')->name('post.show');
+Route::get('test',function(){
+  return view('place.test');
+});

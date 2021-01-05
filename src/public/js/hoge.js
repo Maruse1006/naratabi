@@ -17,21 +17,29 @@
    document.getElementById("input_message").value="宿";
  }
 
- window.Swiper = require('swiper/js/swiper');
+ let mySwiper = new Swiper ('.swiper-container', {
+  loop: true, //最後に達したら先頭に戻る
 
-  import Swiper,{Navigation, Pagination}from 'swiper';
+  pagination: {
+    el: '.swiper-pagination', //ページネーションの要素
+    type: 'bullets', //ページネーションの種類
+    clickable: true, //クリックに反応させる
+  },
 
-   Swiper.use([Navigator,Pagination]);
+  navigation: {
+    nextEl: '.swiper-button-next', //「次へボタン」要素の指定
+    prevEl: '.swiper-button-prev', //「前へボタン」要素の指定
+  },
 
-   import 'swiper/swiper-bundle.css';
+  scrollbar: {
+    el: '.swiper-scrollbar', //要素の指定
+  },
+})
 
-   var mySwiper = new Swiper('.swiper-container',{
-     loop:true,
-     pagination:{
-       el:'.swiper-pagination',
-     },
-     navigation:{
-       nextEl:'.swiper-button-next',
-       prevEl:'.swiper-button-prev',
-     },
-   });
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}

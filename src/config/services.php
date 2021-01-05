@@ -34,4 +34,8 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'google-map'=>[
+      'apikey'=>env('GOOGLE_MAP_API'),
+    ],
+
 ];

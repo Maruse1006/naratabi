@@ -26,7 +26,6 @@ header{
   top:30%;
   left:30%;
   padding-top:80px;
-
 }
 
 .shrine{
@@ -92,6 +91,9 @@ left:30%;
   transform:rotate(-45deg) translate(-50%,0px);
   transform-origin:0% 50%;
 }
+.swiper-container{
+
+}
 
 nav{
   background:#FFCC99;
@@ -108,7 +110,27 @@ nav.active{
   opacity:1;
   width:100%;
   right:5px;
+  z-index:2;
 }
+.tab{
+  text-align: center;
+}
+.swiper-container {
+  height:50%;
+  width:50%;
+  margin: 0 auto;
+  margin-top: 20%;
+  z-index:0;
+}
+.swiper-container img{
+  height:30%;
+  width:60%;
+  padding-left:10%;
+}
+.swiper-wrapper{
+
+}
+
 </style>
 
 /*
