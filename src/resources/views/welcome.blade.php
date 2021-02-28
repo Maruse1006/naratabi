@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+      <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+         <!-- Styles ,
         <style>
             html, body {
                 background-color: #fff;

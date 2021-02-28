@@ -19,6 +19,8 @@ use App\Http\Controllers\HelloController;
 
 use App\Http\Controllers\PlaceController;
 
+use Laravel\Passport\Passport;
+
 
 //Route::get('hello','HelloController@index');
 
@@ -38,3 +40,9 @@ Route::get('place/find/{id}','PlaceController@show')->name('place.show');
 Route::get('test',function(){
   return view('place.test');
 });
+Route::get('/app',function(){
+  return view('app');
+});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//  return $request->user();
+// });

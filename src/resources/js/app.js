@@ -16,10 +16,10 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);const app = new Vue({el:'#app'});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,6 +27,31 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+Vue.component('header-component',HeaderComponent);
+
+  import VueRouter from 'vue-router';
+  import HeaderComponent from "./components/HeaderComponent";
+  import TaskListComponent from "./components/TaskListComponent";
+
+
+  window.Vue = require('vue');
+
+
+  Vue.use(VueRouter);
+
+  const router = new VueRouter({
+      mode: 'history',
+      routes: [
+          {
+              path: '/posts',
+              name: 'posts.list',
+              component: PostListComponent
+          },
+      ]
+  });
+
+
+  const app = new Vue({
+      el: '#app',
+      router
+  });

@@ -8,29 +8,32 @@
 
  use App\Post;
 
-class PostConroller extends Controller{
-/* public function index(Request $request)
+class PostController extends Controller{
+ // // public function index(Request $request)
+ // {
+ //   $items = $request->input("items");
+ //
+ //   $query= User::query();
+ //
+ //  if(!empty($items)){
+ //   $query->where('summary','like','%'.$items.'%');
+ //   }
+ // }
+ public function index()
  {
-   $items = $request->input("items");
-
-   $query= User::query();
-
-  if(!empty($items)){
-   $query->where('summary','like','%'.$items.'%');
-   }
+   return Post::all();
  }
 
-}
+
+ /*public function index(Request $request)
+ {
+   return Post::create($request->all());
+ }
 */
- public function index(Request $request)
- {
-   return Post::create($request->all());
- }
-
- public function store(Request $request)
- {
-   return Post::create($request->all());
- }
+ // public function store(Request $request)
+ // {
+ //   return Post::create($request->all());
+ // }
  public function show($id)
  {
    return Post::find($id);
@@ -46,5 +49,22 @@ class PostConroller extends Controller{
    return Post::destory($id);
  }
 
+ public function find(Request $request)
+ {
+    return ['input' =>''];
+ }
+
+ // public function index()
+ // {
+ //   $posts = Post::all();
+ //   return response()->json(['posts'=>$posts],200);
+ // }
+ //
+ //
+ public function store(Request $request)
+ {
+    $title=$request->title;
+    return response()->json(['posts'=>$title],200);
+ }
 }
  ?>
