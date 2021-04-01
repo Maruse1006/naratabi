@@ -45,7 +45,7 @@ class PostController extends Controller{
      //return response()->json(['posts'=>$posts],200);
  }
 
-  public function edit(Request $request)
+  public function edit(Request $request,$id)
  {
     $post = Post::find($request->id);
 }
