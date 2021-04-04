@@ -42,21 +42,24 @@ class PostController extends Controller{
  {
      $post = Post::findOrFail($id);
      $post->delete();
-     //return response()->json(['posts'=>$posts],200);
+     return response()->json(['posts'=>$posts],200);
  }
 
   public function edit(Request $request,$id)
  {
-    $post = Post::find($request->id);
+    $post = Post::find($id);
+    return response()->json(['post'=>$post],200);
 }
 
 public function update(Request $request,$id)
 {
-    $post = post::find($request->id);
-    $post->id=$request->id;
-    $post->title = $request->title;
-    $post->content = $request->content;
-    $post->save();
+     $post = Post::find($request->id);
+    // $post->id=$request->id;
+     $post->title = $request->title;
+     $post->content = $request->content;
+     $post->save();
+     return response()->json(['post'=>$post],200);
+     Debugbar::info($post);
 }
 }
  ?>
