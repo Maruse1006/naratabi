@@ -17,9 +17,10 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             //$table->timestamps();
             //$table->increments('id');
-            $table->string('title',100);
+            $table->string('name',100);
             $table->string('content',100);
             $table->string('person_in_charge',100)->nullable();
+            $table->string('category_id',100);
             $table->timestamps();
         });
     }

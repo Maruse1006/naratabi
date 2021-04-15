@@ -19,28 +19,31 @@ class PostsTableSeeder extends Seeder
         //
         //   ]);
 
-    // $data = [
-    //    [
-    //      'id'=>1,
-    //      'title'=>'title',
-    //      'content'=>'content',
-    //      'person_in_charge'=>'person_in_charge'
+     $data = [
+        [
+          'id'=>1,
+          'name'=>'name',
+         'content'=>'content',
+        // 'person_in_charge'=>'person_in_charge'
+          'category_id'=>'1',
+         ]
+        ];
+        DB::table('posts')->insert($data);
+         }
+
+    // 初期値を配列で入れる
+    //     $data=[];
     //
-    //    ]
-    // ];
-  //  DB::table('posts')->insert($data);
-    //    }
-        $data=[];
+    //     for($i=1;$i<=10;$i++){
+    //       $data[]=[
+    //          'id'=>$i,
+    //          'name'=>'name'.$i,
+    //          'content'=>'content'.$i,
+    //        'person_in_charge'=>'person_in_charge'.$i,
+    //        ''
+    //    ];
 
-        for($i=1;$i<=10;$i++){
-          $data[]=[
-             'id'=>$i,
-             'title'=>'title'.$i,
-             'content'=>'content'.$i,
-           'person_in_charge'=>'person_in_charge'.$i,
-       ];
-
-     }
-     DB::table('posts')->insert($data);
-}
+//      }
+//      DB::table('posts')->insert($data);
+// }
 }

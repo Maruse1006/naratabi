@@ -8,6 +8,8 @@
 
  use App\Post;
 
+ use App\Category;
+
 class PostController extends Controller{
 
  public function index()
@@ -17,17 +19,10 @@ class PostController extends Controller{
 
 
 
-
- public function find()
- {
-    return ['input' =>''];
- }
-
-
  public function create(Request $request)
  {
    $post = new Post;
-   $post->title = $request->title;
+   $post->name = $request->name;
    $post->content = $request->content;
    $post->save();
     // $param = [
@@ -60,6 +55,23 @@ public function update(Request $request,$id)
      $post->save();
      return response()->json(['post'=>$post],200);
      Debugbar::info($post);
+}
+
+public function search(Request $request)
+{
+
+  $category = Category::where('name',$request->name)->first();
+
+    $posts=Post::where('category_id',$category->id)->get();
+
+  $param = ['input'=>$request->name,'post'=>$posts];
+
+ return response()->json(['posts'=>$param],200);
+
+}
+public function find(Request $request)
+{
+  return response()->json(['input'=>''],200);
 }
 }
  ?>

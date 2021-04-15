@@ -17,7 +17,7 @@ class AdminUserTable extends Migration
       //$table->bigIncrements('id');
       //$table->timestamps();
       $table->increments('id');
-      $table->string('title');
+      $table->string('name');
       $table->string('content');
       //$table->string('person_in_charge',100)->nullable();
       //$table->timestamps();

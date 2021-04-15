@@ -57,16 +57,15 @@
    </div>
    <div class="hotel">
    <form>
-<<<<<<< HEAD
+
     <input type="button" value="宿" onClick="miyage()" style="border-radius:30px;">
-=======
+
     <input type="button" value="宿" onClick="hotel()" style= "border-radius:30px width:30%;">
->>>>>>> 5f5f70aff6141897bc83a91bf43644077d796ca2
+
    </form>
   </div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-<<<<<<< HEAD
       <div class="swiper-slide">
           <div class="tav">
             温泉特集
@@ -75,11 +74,11 @@
       </div>
       <div class="swiper-slide"><img src="{{ asset('img/tanaka.jpg') }}"  /></div>
       <div class="swiper-slide"><img src="{{ asset('img/daibutsu.jpg') }}"  /></div>
-=======
+
       <div class="swiper-slide">スライドー１</div>
       <div class="swiper-slide">スライドー2</div>
       <div class="swiper-slide">スライドー3</div>
->>>>>>> 5f5f70aff6141897bc83a91bf43644077d796ca2
+
     </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>

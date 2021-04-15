@@ -16,9 +16,9 @@ use Laravel\Passport\Passport;
 */
 
 
+Route::post('/search','PostController@search');
 
-
-Route::get('/posts','PostController@index');
+Route::get('/posts','PostController@find');
 
 //create route
 Route::post('/posts','PostController@create');
