@@ -12,10 +12,7 @@
 
 class PostController extends Controller{
 
- public function index()
-  {
-    return Post::all();
-  }
+
 
 
 
@@ -54,24 +51,26 @@ public function update(Request $request,$id)
      $post->content = $request->content;
      $post->save();
      return response()->json(['post'=>$post],200);
-     Debugbar::info($post);
+
 }
 
 public function search(Request $request)
 {
 
-  $category = Category::where('name',$request->name)->first();
+  $category = Category::where('id',1)->first();
+//  $category = Category::where('name',$request->name)->first();
 
     $posts=Post::where('category_id',$category->id)->get();
 
-  $param = ['input'=>$request->name,'post'=>$posts];
+    $param = ['input'=>$request->name,'posts'=>$posts];
 
- return response()->json(['posts'=>$param],200);
+ return response()->json($param,200);
 
 }
 public function find(Request $request)
 {
-  return response()->json(['input'=>''],200);
+  $category = Category::all();
+  return response()->json(['category'=>$category],200);
 }
 }
  ?>

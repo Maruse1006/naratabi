@@ -29,3 +29,5 @@ Route::post('/delete/{id}','PostController@delete');
 Route::get('/post/{id}','PostController@edit');
 
 Route::post('/post/{id}','PostController@update');
+
+Route::get('/show'.'PostController@index');
