@@ -18,7 +18,7 @@ use Laravel\Passport\Passport;
 
 Route::post('/search','PostController@search');
 
-Route::get('/posts','PostController@find');
+Route::get('/posts','PostController@index');
 
 //create route
 Route::post('/posts','PostController@create');
@@ -29,5 +29,9 @@ Route::post('/delete/{id}','PostController@delete');
 Route::get('/post/{id}','PostController@edit');
 
 Route::post('/post/{id}','PostController@update');
+Route::get('/top/{id}','PostController@find');
 
-Route::get('/show'.'PostController@index');
+Route::post('/form/s3','PostImageController@s3');
+
+Route::get('/show','PostImageController@show');
+//Route::post('/photos','PostController@create')->name('photo.create');
