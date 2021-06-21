@@ -28,6 +28,8 @@ class PostImageController extends Controller
 
         $image =new Image();
 
+        $image->title = $request->title;
+
         $image->path = Storage::disk('s3')->url($path);
         $image->save();
 

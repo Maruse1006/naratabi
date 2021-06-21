@@ -25,42 +25,44 @@ class PostController extends Controller{
 
  public function create(Request $request)
  {
-   $comment = new Comment;
-   $comment->title = $request->title;
-   $comment->content = $request->content;
-   $comment->saved();
-    // $param = [
-    //   'title'=>$request->title,
-    //   'content'=>$request->content,
-    // ];
-    //   DB::table('posts')->insert($param);
-    return response()->json(['comments'=>$comment],200);
+  //  $comment = new Comment;
+  //  $comment->title = $request->title;
+  //  $comment->content = $request->content;
+  //  $comment->saved();
+  //   // $param = [
+  //   //   'title'=>$request->title,
+  //   //   'content'=>$request->content,
+  //   // ];
+  //   //   DB::table('posts')->insert($param);
+  //   return response()->json(['comments'=>$comment],200);
+  $posts = Post::all();
+    return response()->json(['posts'=>$posts],200);
  }
 
  public function delete(Request $request,$id)
  {
-     $post = Post::findOrFail($id);
-     $post->delete();
+     $posts = Post::findOrFail($id);
+     $posts->delete();
      return response()->json(['posts'=>$posts],200);
  }
 
   public function edit(Request $request,$id)
  {
-    $post = Post::find($id);
-    return response()->json(['post'=>$post],200);
+    $posts = Post::find($id);
+    return response()->json(['posts'=>$posts],200);
 }
 
-// public function update(Request $request,$id)
-// {
-//      $post =new stdClass;
-//      $post = Post::find($request->id);
-//     // $post->id=$request->id;
-//      $post->title = $request->title;
-//      $post->content = $request->content;
-//      $post->save();
-//      return response()->json(['post'=>$post],200);
+public function update(Request $request,$id)
+{
+     $post =new Post;
+     $post = Post::find($request->id);
+    // $post->id=$request->id;
+     $post->title = $request->title;
+     $post->content = $request->content;
+     $post->save();
+     return response()->json(['post'=>$post],200);
 
-// }
+}
 
 public function search(Request $request)
 {
@@ -86,6 +88,14 @@ public function find(Request $request,$id)
 
   return response()->json(['posts'=>$posts],200);
 }
+
+public function detail(Request $reques,$id)
+{
+  $posts = Post::find($id);
+
+  return response()->json(['posts'=>$posts],200);
+}
+
 
 // public function s3(Request $request)
 //     {
