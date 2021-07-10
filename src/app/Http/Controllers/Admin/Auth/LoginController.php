@@ -26,31 +26,31 @@ use AuthenticatesUsers;
  *
  * @var string
  */
-protected $redirectTo = '/admin/home';　　　　// ログイン後のリダイレクト先
+protected $redirectTo = RouteServiceProvider::HOME;　　　　// ログイン後のリダイレクト先
 
 // ログイン画面
-public function showLoginForm()
-{
-    return view('admin.auth.login'); //管理者ログインページのテンプレート
-}
+// public function showLoginForm()
+// {
+//     return view('admin.auth.login'); //管理者ログインページのテンプレート
+// }
 
-public function adminLogin(Request $request)
-    {
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6'
-        ]);
+// public function adminLogin(Request $request)
+//     {
+//         $this->validate($request, [
+//             'email'   => 'required|email',
+//             'password' => 'required|min:6'
+//         ]);
 
-        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+//         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/admin');
-        }
-        return back()->withInput($request->only('email', 'remember'));
-    }
-protected function guard()
-{
-    return \Auth::guard('admin'); //管理者認証のguardを指定
-}
+//             return redirect()->intended('/admin');
+//         }
+//         return back()->withInput($request->only('email', 'remember'));
+//     }
+// protected function guard()
+// {
+//     return \Auth::guard('admin'); //管理者認証のguardを指定
+// }
 
 /**
  * Log the user out of the application.
@@ -66,6 +66,15 @@ public function logout(Request $request)
 
     return $this-&gt;loggedOut($request) ?: redirect('/admin/');  // ログアウト後のリダイレクト先
 }
+public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        return $user;
+    }
 
 
 }

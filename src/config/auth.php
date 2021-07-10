@@ -43,7 +43,7 @@ return [
 
         'api' => [
             'driver' => 'passport',
-            'provider' => 'users',
+            'provider' => 'admin_users',
             'hash' => false,
         ],
     ],
@@ -71,9 +71,9 @@ return [
             'model' => App\User::class,
         ],
 
-        'admins' => [
+        'admins_users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
+            'model' => App\Models\AdminUser::class,
         ]
 
         // 'users' => [
@@ -102,9 +102,10 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+            'throttle' => 60,
         ],
-        'admins' => [
-            'provider' => 'admins',
+        'admins_user' => [
+            'provider' => 'admins_users',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

@@ -18,7 +18,7 @@ use Laravel\Passport\Passport;
 
 Route::post('/search','PostController@search');
 
-Route::get('/top','PostController@index');
+Route::get('/category','PostController@index');
 
 //create route
 Route::get('/posts','PostController@create');
@@ -29,52 +29,61 @@ Route::post('/delete/{id}','PostController@delete');
 Route::get('/posts/{id}','PostController@edit');
 
 Route::post('/posts/{id}','PostController@update');
-Route::get('/top/{id}','PostController@find');
+Route::get('/category/{id}','PostController@find');
 
 //Route::get('/top/{id}','PostController@index');
 
 Route::post('/form/s3','PostImageController@s3');
 
 Route::get('/show','PostImageController@show');
-Route::get('top/post/{id}','PostController@detail');
+Route::get('category/post/{id}','PostController@detail');
 
-<?php
 
-// ユーザー
-Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
-    // ログイン認証関連
-    Auth::routes([
-        'register' => true,
-        'reset'    => false,
-        'verify'   => false
-    ]);
+// // ユーザー
+// Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
-    // ログイン認証後
-    Route::middleware('auth:user')->group(function () {
+//     // ログイン認証関連
+//     Auth::routes([
+//         'register' => true,
+//         'reset'    => false,
+//         'verify'   => false
+//     ]);
 
-        // TOPページ
-        Route::resource('home', 'HomeController', ['only' => 'index']);
+//     // ログイン認証後
+//     Route::middleware('auth:user')->group(function () {
 
+//         // TOPページ
+//         Route::resource('home', 'HomeController', ['only' => 'index']);
+
+//     });
+// });
+
+// // 管理者
+// Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+
+//     // ログイン認証関連
+//     Auth::routes([
+//         'register' => true,
+//         'reset'    => false,
+//         'verify'   => false
+//     ]);
+
+//     // ログイン認証後
+//     Route::middleware('auth:admin')->group(function () {
+
+//         // TOPページ
+//         Route::resource('home', 'HomeController', ['only' => 'index']);
+
+//     });
+
+// });
+
+// Route::post('/logi','Api\AuthController@login');
+
+Route::group(["middleware" => "api"], function () {
+    Route::post('/login', 'Auth\LoginController@login');
+    Route::get('/current_admin', function () {
+        return Auth::user();
     });
-});
-
-// 管理者
-Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
-
-    // ログイン認証関連
-    Auth::routes([
-        'register' => true,
-        'reset'    => false,
-        'verify'   => false
-    ]);
-
-    // ログイン認証後
-    Route::middleware('auth:admin')->group(function () {
-
-        // TOPページ
-        Route::resource('home', 'HomeController', ['only' => 'index']);
-
-    });
-
 });
