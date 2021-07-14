@@ -40,10 +40,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
+          
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'user',
+        ],
+        'admin_user' => [
+            'driver' => 'session',
+            'provider' => 'admin_user',
+        ],
         'api' => [
             'driver' => 'passport',
-            'provider' => 'admin_users',
+            'provider' => 'users',
             'hash' => false,
         ],
     ],
