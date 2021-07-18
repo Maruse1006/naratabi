@@ -12,11 +12,11 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
       $data[]=[
-         'id'=>'1',
-         'name'=>'maru1111',
-         'email'=>'gunkou1006@.gmail',
+         'id'=>'3',
+         'name'=>'maru1006',
+         'email'=>'aaa1006@.gmail',
          'email_verified_at'=>null,
-         'password'=>Hash::make('gunkou1006'),
+         'password'=>Hash::make('ivusa1006'),
          'remember_token'=>'',
          'created_at'=>null,
          'updated_at'=>null,
