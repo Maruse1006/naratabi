@@ -26,7 +26,7 @@ Route::get('/posts','PostController@create');
 
 Route::post('/delete/{id}','PostController@delete');
 
-Route::get('/posts/{id}','PostController@edit');
+Route::get('/edit/{id}','PostController@edit');
 
 Route::post('/posts/{id}','PostController@update');
 Route::get('/category/{id}','PostController@find');
@@ -40,46 +40,7 @@ Route::get('category/post/{id}','PostController@detail');
 
 
 
-// // ユーザー
-// Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 
-//     // ログイン認証関連
-//     Auth::routes([
-//         'register' => true,
-//         'reset'    => false,
-//         'verify'   => false
-//     ]);
-
-//     // ログイン認証後
-//     Route::middleware('auth:user')->group(function () {
-
-//         // TOPページ
-//         Route::resource('home', 'HomeController', ['only' => 'index']);
-
-//     });
-// });
-
-// // 管理者
-// Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
-
-//     // ログイン認証関連
-//     Auth::routes([
-//         'register' => true,
-//         'reset'    => false,
-//         'verify'   => false
-//     ]);
-
-//     // ログイン認証後
-//     Route::middleware('auth:admin')->group(function () {
-
-//         // TOPページ
-//         Route::resource('home', 'HomeController', ['only' => 'index']);
-
-//     });
-
-// });
-
-// Route::post('/logi','Api\AuthController@login');
 
 Route::group(["middleware" => "api"], function () {
     Route::post('/login', 'Auth\LoginController@login');
