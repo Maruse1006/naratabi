@@ -8,6 +8,8 @@
 
  use Illuminate\Support\Facades\Storage;
 
+ use Illuminate\Support\Facades\Auth;
+
 
  use App\Post;
 
@@ -19,25 +21,31 @@
 
  //use storage;
 
+ // 現在認証しているユーザーを取得
+$user = Auth::user();
+
+// 現在認証しているユーザーのIDを取得
+$id = Auth::id();
+
  
 
 class PostController extends Controller{
 
- public function create(Request $request)
- {
-  //  $comment = new Comment;
-  //  $comment->title = $request->title;
-  //  $comment->content = $request->content;
-  //  $comment->saved();
-  //   // $param = [
-  //   //   'title'=>$request->title,
-  //   //   'content'=>$request->content,
-  //   // ];
-  //   //   DB::table('posts')->insert($param);
-  //   return response()->json(['comments'=>$comment],200);
-  $posts = Post::all();
-    return response()->json(['posts'=>$posts],200);
- }
+//  public function create(Request $request)
+//   {
+//     $posts = new Post;
+//     $posts->name = $request->name;
+//     $posts->content = $request->content;
+//     $posts->saved();
+//   //  $param = [
+//   //   //   'title'=>$request->title,
+//   //   //   'content'=>$request->content,
+//   //   // ];
+//   //   //   DB::table('posts')->insert($param);
+//   //   return response()->json(['comments'=>$comment],200);
+    
+  //   return response()->json(['posts'=>$posts],200);
+  // }
 
  public function delete(Request $request,$id)
  {
@@ -52,12 +60,17 @@ class PostController extends Controller{
     return response()->json(['posts'=>$posts],200);
 }
 
+public function post(Request $request)
+ {
+    $posts = Post::all();
+    return response()->json(['posts'=>$posts],200);
+}
 public function update(Request $request,$id)
 {
      $post =new Post;
      $post = Post::find($request->id);
     // $post->id=$request->id;
-     $post->title = $request->title;
+     $post->name = $request->name;
      $post->content = $request->content;
      $post->save();
      return response()->json(['post'=>$post],200);
@@ -91,11 +104,12 @@ public function find(Request $request,$id)
 
 public function detail(Request $reques,$id)
 {
-  $posts = Post::find($id);
-
-  return response()->json(['posts'=>$posts],200);
+  $post = Post::find($id);
+  return response()->json(compact('post'),200);
 }
-
+public function use(User $user){
+  $user = $user->getAllusers(auth()->user()->id);
+}
 
 // public function s3(Request $request)
 //     {

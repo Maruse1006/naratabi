@@ -21,7 +21,7 @@ Route::post('/search','PostController@search');
 Route::get('/category','PostController@index');
 
 //create route
-Route::get('/posts','PostController@create');
+Route::get('/posts','PostController@post');
 
 
 Route::post('/delete/{id}','PostController@delete');

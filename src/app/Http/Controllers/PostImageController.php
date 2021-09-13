@@ -12,13 +12,15 @@ use App\Post;
 
  use App\Image;
 
+ use Illuminate\Support\Facades\Auth;
+
 
 
 class PostImageController extends Controller
 {
     public function s3(Request $request)
     {
-     
+        $user = Auth::user();
         $disk = Storage::disk('s3');
       
         $image = $request->image;
@@ -41,10 +43,13 @@ class PostImageController extends Controller
     public function show(Request $request)
     {
        $images= Image::all();
+       $user = Auth::user();
+       $id = Auth::id();
        
 
         return response()->json(['images'=>$images],200);
-
+        return response()->json(['user'=>$user],200);
+        return response()->json(['id'=>$id],200);
     }
 }
 
