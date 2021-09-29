@@ -6,6 +6,8 @@ use App\Place;
 
 use App\Gift;
 
+use App\Traits\GetTrait;
+
 
 use App\Category;
 
@@ -15,7 +17,7 @@ use Illuminate\Http\Request;
 
 class PlaceController extends Controller{
 
-
+  use GetTrait;
 public function find(Request $request)
 {
   return view('place.find',['input' =>'']);
@@ -47,5 +49,4 @@ public function test(Request $request){
 
   return view('place.test');
 }
-
 }
