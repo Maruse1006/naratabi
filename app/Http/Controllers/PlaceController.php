@@ -12,8 +12,6 @@ use App\Category;
 
 use Illuminate\Http\Request;
 
-
-
 class PlaceController extends Controller{
 
 public function find(Request $request)
