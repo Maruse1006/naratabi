@@ -19,6 +19,8 @@
 
  use stdClass;
 
+ 
+
  //use storage;
 
  // 現在認証しているユーザーを取得
@@ -124,5 +126,18 @@ public function use(User $user){
 //         //なのでデータベースに$pathを保存することで呼び出せるようになる
 //         return response()->json(['response'=>$path],200);
 //     }
+// $file = $request->file('imagefile');
+// $name = $file->getClientOriginalName();
+// //アスペクト比を維持、画像サイズを横幅1080pxにして保存する。
+// InterventionImage::make($file)->resize(1080, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('/images/' . $filename ) );;
+
+public function register(Request $request)
+ {
+   $post = new Post;
+   $post->id = $request->id;
+   $post->name = $request->name;
+   $post->email = $request->email;
+   $post->save();
+    return response()->json(['posts'=>$post],200);
+ }
 }
- ?>

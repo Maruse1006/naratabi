@@ -38,7 +38,8 @@ Route::post('/form/s3','PostImageController@s3');
 Route::get('/show','PostImageController@show');
 Route::get('category/post/{id}','PostController@detail');
 
-
+Route::get('/register','PostImageController@register');
+Route::post('/register','PostController@register_post');
 
 
 
