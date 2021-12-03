@@ -11,13 +11,15 @@
  use Illuminate\Support\Facades\Auth;
 
 
- use App\Models\Post;
+ //use App\Models\Post;
 
  use App\Category;
 
  use App\Photo;
 
  use stdClass;
+
+ use App\Model\Post;
 
  
 
