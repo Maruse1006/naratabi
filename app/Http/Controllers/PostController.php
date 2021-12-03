@@ -11,7 +11,7 @@
  use Illuminate\Support\Facades\Auth;
 
 
- use App\Post;
+ use App\Models\Post;
 
  use App\Category;
 
@@ -133,11 +133,28 @@ public function use(User $user){
 
 public function register(Request $request)
  {
-   $post = new Post;
-   $post->id = $request->id;
-   $post->name = $request->name;
-   $post->email = $request->email;
-   $post->save();
-    return response()->json(['posts'=>$post],200);
+  User::create([
+    "name" => $request->name,
+    "email" => $request->email,
+    "password" => Hash::make($request->password)
+]);
+
+return response()->json(['message' => 'Successfully user create']);
  }
+
+ public function review(Request $request) {
+  if(!auth()->check()) {
+    $fail('レビューするにはログインしてください。');
+    return;
+}
+
+  $review = new \App\PostReview();
+  $review->post_id = $request->post_id;
+  $review->user_id = $request->user()->id;
+  $review->stars = $request->stars;
+  $review->comment = $request->comment;
+  $result = $review->save();
+  return ['result' => $result];
+ }
+
 }
