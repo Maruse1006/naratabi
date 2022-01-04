@@ -41,11 +41,17 @@ Route::get('category/post/{id}','PostController@detail');
 //Route::get('/register','PostImageController@register');
 Route::post('/register','PostController@register');
 
-Route::get('/review','PostController@review');
 
-Route::group(["middleware" => "api"], function () {
+//Route::post('/review','PostController@review');
+
+    Route::group(["middleware" => "api"], function () {
+   // Route::post('/review','PostController@review');
     Route::post('/login', 'Auth\LoginController@login');
     Route::get('/current_admin', function () {
-        return Auth::user();
+    return Auth::user();
     });
+});
+
+Route::group(['middleware' => ['auth:api']], function(){
+    Route::post('/review','PostController@review');
 });

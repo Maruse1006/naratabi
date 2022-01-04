@@ -11,7 +11,7 @@
  use Illuminate\Support\Facades\Auth;
 
 
- //use App\Models\Post;
+ use App\Post;
 
  use App\Category;
 
@@ -19,8 +19,11 @@
 
  use stdClass;
 
- use App\Model\Post;
+ use App\PostReview;
 
+ 
+
+ //use App\Post;
  
 
  //use storage;
@@ -145,11 +148,7 @@ return response()->json(['message' => 'Successfully user create']);
  }
 
  public function review(Request $request) {
-  if(!auth()->check()) {
-    $fail('レビューするにはログインしてください。');
-    return;
-}
-
+  \Log::info( Auth::user());
   $review = new \App\PostReview();
   $review->post_id = $request->post_id;
   $review->user_id = $request->user()->id;
