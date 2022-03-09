@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class PostReview extends Model
 {
+
+    protected $fillable = [
+        'id','comment','user_id',
+    ];
+
     public function user() { // 👈 追加
 
         return $this->belongsTo(\App\User::class, 'user_id', 'id')

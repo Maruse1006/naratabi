@@ -21,6 +21,14 @@
 
  use App\PostReview;
 
+ use App\User;
+
+ use Hash;
+
+ use Log;
+
+ //use App\Post_review;
+
  
 
  //use App\Post;
@@ -109,14 +117,23 @@ public function find(Request $request,$id)
   return response()->json(['posts'=>$posts],200);
 }
 
-public function detail(Request $reques,$id)
+public function detail(Request $request,$id)
 {
   $post = Post::find($id);
   return response()->json(compact('post'),200);
 }
-public function use(User $user){
+public function user(User $user){
   $user = $user->getAllusers(auth()->user()->id);
 }
+
+
+  // $review = Review::find($id);
+  // return response()->json(compact('review'),200);
+  // public function list(Request $request,$id)
+  // {
+  //   $review = Review::find($id);
+  // return response()->json(compact('review'),200);
+  // }
 
 // public function s3(Request $request)
 //     {
@@ -138,24 +155,41 @@ public function use(User $user){
 
 public function register(Request $request)
  {
-  User::create([
-    "name" => $request->name,
-    "email" => $request->email,
-    "password" => Hash::make($request->password)
-]);
-
-return response()->json(['message' => 'Successfully user create']);
- }
+  // $user =User::create([
+  //   "name" => $request->name,
+  //   "email" => $request->email,
+  //   "password" => Hash::make('password'),
+  //    ]);
+  $user = new User;
+  $user->name = $request->name;
+  $user->email= $request->email;
+  $user->password =Hash::make('password');
+  $user->save();
+  return response()->json(['user'=>$user],200);
+   }
 
  public function review(Request $request) {
-  \Log::info( Auth::user());
+ 
   $review = new \App\PostReview();
   $review->post_id = $request->post_id;
-  $review->user_id = $request->user()->id;
+  $review->id = $request->id;
+  //$review->user_id =User::find($request->id);
+  $review->user_id= Auth::id();
+  //$review->user_id= $request->user()->id;
   $review->stars = $request->stars;
   $review->comment = $request->comment;
   $result = $review->save();
   return ['result' => $result];
+
+  // $user_id = Auth::user();
+
+  // $review = Postreview::create([
+  //               'id' =>$request->id,
+  //               'user_id'=>$user_id->id,
+  //               'comment'=> $request->comment
+  //                   ]);
+
+  // $result = $review->save();
  }
 
 }

@@ -43,15 +43,22 @@ Route::post('/register','PostController@register');
 
 
 //Route::post('/review','PostController@review');
-    Route::post('/login', 'Auth\LoginController@login');
-    Route::group(["middleware" => "api"], function () {
+    
+  //  Route::group(["middleware" => "api"], function () {
    // Route::post('/review','PostController@review');
    // Route::post('/login', 'Auth\LoginController@login');
-    Route::get('/current_admin', function () {
-    return Auth::user();
-    });
-});
+//     Route::get('/current_admin', function () {
+//     return Auth::user();
+//     });
+// });
 
-Route::group(['middleware' => ['auth:api']], function(){
-    Route::post('/review','PostController@review');
+Route::post('/login', 'Auth\LoginController@login');
+
+Route::group(['middleware' => 'auth:api'], function () {
+  Route::get('/user', 'Auth\LoginController@user');
+  Route::post('/review','PostController@review');
 });
+//Route::post('/review','PostController@review');
+Route::post('/logout', 'Auth\LoginController@logout');
+Route::get('/list','PostController@list');
+

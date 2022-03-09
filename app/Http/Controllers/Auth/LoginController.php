@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
+//use Illuminate\Validatation\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use App\Login;
+use App\Models\User;
+use Log;
+
 
 class LoginController extends Controller
 {
@@ -41,14 +47,33 @@ class LoginController extends Controller
     }
     public function login(Request $request)
     {
-        $credentials = $this->validate($request, [ 'name' => 'required','password' => 'required', ]);
+        //$credentials = $this->validate($request, [ 'name' => 'required','password' => 'required', ]);
+        $loginData = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+           // 'form' => 'form',
+        ]);
+
         if (!auth()->attempt($loginData)) {
             return response(['message' => 'Invalid Credentials']);
         }
-        $accessToken = auth()->user()->createToken('authToken')->accessToken;
+        $token = auth()->user()->createToken('authToken')->accessToken;
 
         return response()->json(['token'=>$token],200);
+    }
+      
+    public function user(Request $request)
+    {
+        $user= Auth::user()->name;
+        \Log::info($user);
+        return response()->json(compact('user'),200);
+     
+    }
 
-       // $this->validate($request, [ 'name' => 'required','password' => 'required', ]);
-}
+    protected function logout(Request $request)
+  {
+    Auth::guard('web')->logout();
+    return response()->json();
+  }
+
 }
