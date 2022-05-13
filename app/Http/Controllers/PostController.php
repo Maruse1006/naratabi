@@ -19,13 +19,15 @@
 
  use stdClass;
 
- use App\PostReview;
+ use App\Postreview;
 
  use App\User;
 
  use Hash;
 
  use Log;
+
+ //use App\Post_review;
 
  //use App\Post_review;
 
@@ -71,7 +73,7 @@ class PostController extends Controller{
 
   public function edit(Request $request,$id)
  {
-    $posts = Post::find($id);
+    $user = User::find($id);
     return response()->json(['posts'=>$posts],200);
 }
 
@@ -82,13 +84,18 @@ public function post(Request $request)
 }
 public function update(Request $request,$id)
 {
-     $post =new Post;
-     $post = Post::find($request->id);
-    // $post->id=$request->id;
-     $post->name = $request->name;
-     $post->content = $request->content;
-     $post->save();
-     return response()->json(['post'=>$post],200);
+    // $user =new User;
+     $user = Auth::user();
+     \Log::info($user);
+     $userId = $user->id;
+    // $user = User::find($request->id);   
+   //  $user->id=$request->id;
+     $user->name  = $request->name;
+    $user->email = $request->email;
+    $user->password =Hash::make('password');
+    $user->save();
+   // \Log::info($request->id);
+    return response()->json(['user'=>$user],200);
 
 }
 
@@ -105,11 +112,11 @@ public function search(Request $request)
  return response()->json($param,200);
 
 }
-public function index(Request $request)
-{
-  $category = Category::all();
-  return response()->json(['categories'=>$category],200);
-}
+// public function index(Request $request)
+// {
+//   $category = Category::all();
+//   return response()->json(['categories'=>$category],200);
+// }
 public function find(Request $request,$id)
 {
   $posts= Post::where('category_id',$request->id)->get();
@@ -120,20 +127,21 @@ public function find(Request $request,$id)
 public function detail(Request $request,$id)
 {
   $post = Post::find($id);
-  return response()->json(compact('post'),200);
+  $postreviews=Postreview::where('post_id',$post->id)->get();
+  //$user = User::where('user_id',$post_id)
+  //$user = Postreview::where('user_id',$post->id)->get();
+  
+  return response()->json(compact('post','postreviews','user'),200);
 }
 public function user(User $user){
   $user = $user->getAllusers(auth()->user()->id);
 }
 
 
+
   // $review = Review::find($id);
   // return response()->json(compact('review'),200);
-  // public function list(Request $request,$id)
-  // {
-  //   $review = Review::find($id);
-  // return response()->json(compact('review'),200);
-  // }
+   
 
 // public function s3(Request $request)
 //     {
@@ -163,7 +171,7 @@ public function register(Request $request)
   $user = new User;
   $user->name = $request->name;
   $user->email= $request->email;
-  $user->password =Hash::make('password');
+  $user->password =Hash::make($request->password);
   $user->save();
   return response()->json(['user'=>$user],200);
    }
@@ -175,6 +183,7 @@ public function register(Request $request)
   $review->id = $request->id;
   //$review->user_id =User::find($request->id);
   $review->user_id= Auth::id();
+  $review->username =Auth::user()->name;
   //$review->user_id= $request->user()->id;
   $review->stars = $request->stars;
   $review->comment = $request->comment;
@@ -191,5 +200,16 @@ public function register(Request $request)
 
   // $result = $review->save();
  }
+  public function store($postId)
+    {
+        Auth::user()->like($postId);
+        return 'ok!'; //レスポンス内容
+    }
+
+    public function destroy($postId)
+    {
+        Auth::user()->unlilikeke($postId);
+        return 'ok!'; //レスポンス内容
+    }
 
 }

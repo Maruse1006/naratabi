@@ -18,7 +18,7 @@ use Laravel\Passport\Passport;
 
 Route::post('/search','PostController@search');
 
-Route::get('/category','PostController@index');
+Route::get('/category','HomeController@index');
 
 //create route
 Route::get('/posts','PostController@post');
@@ -28,7 +28,7 @@ Route::post('/delete/{id}','PostController@delete');
 
 Route::get('/edit/{id}','PostController@edit');
 
-Route::post('/posts/{id}','PostController@update');
+
 Route::get('/category/{id}','PostController@find');
 
 //Route::get('/top/{id}','PostController@index');
@@ -42,23 +42,28 @@ Route::get('category/post/{id}','PostController@detail');
 Route::post('/register','PostController@register');
 
 
-//Route::post('/review','PostController@review');
+Route::post('/review','PostController@review');
     
-  //  Route::group(["middleware" => "api"], function () {
-   // Route::post('/review','PostController@review');
-   // Route::post('/login', 'Auth\LoginController@login');
+//    Route::group(["middleware" => "api"], function () {
+//    Route::post('/review','PostController@review');
+//    Route::post('/login', 'Auth\LoginController@login');
 //     Route::get('/current_admin', function () {
 //     return Auth::user();
 //     });
 // });
 
+//Route::post('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::group(['middleware' => 'auth:api'], function () {
+  Route::post('/dashboard/edit','PostController@update');
   Route::get('/user', 'Auth\LoginController@user');
   Route::post('/review','PostController@review');
 });
-//Route::post('/review','PostController@review');
+
 Route::post('/logout', 'Auth\LoginController@logout');
-Route::get('/list','PostController@list');
+//Route::get('/category/post/{id}/{id}','PostController@list');
+
+// Route::post('/like/{id}','LikeController@store');
+// Route::post('/unlike/{id}','LikeController@destroy');
 

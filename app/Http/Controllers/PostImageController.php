@@ -53,5 +53,17 @@ class PostImageController extends Controller
         return response()->json(['user'=>$user],200);
         return response()->json(['id'=>$id],200);
     }
+
+    public function store($postId)
+    {
+        Auth::user()->like($postId);
+        return 'ok!'; //レスポンス内容
+    }
+
+    public function destroy($postId)
+    {
+        Auth::user()->unlilikeke($postId);
+        return 'ok!'; //レスポンス内容
+    }
 }
 
