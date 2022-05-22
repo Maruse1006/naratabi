@@ -39,7 +39,7 @@ Route::get('/show','PostImageController@show');
 Route::get('category/post/{id}','PostController@detail');
 
 //Route::get('/register','PostImageController@register');
-Route::post('/register','PostController@register');
+Route::post('/register','RegisterController@register');
 
 
 Route::post('/review','PostController@review');
@@ -64,6 +64,6 @@ Route::group(['middleware' => 'auth:api'], function () {
 Route::post('/logout', 'Auth\LoginController@logout');
 //Route::get('/category/post/{id}/{id}','PostController@list');
 
-// Route::post('/like/{id}','LikeController@store');
-// Route::post('/unlike/{id}','LikeController@destroy');
+Route::post('/like/{id}','LikeController@store');
+Route::post('/unlike/{id}','LikeController@destroy');
 

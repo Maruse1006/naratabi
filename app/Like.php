@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
-    public function likes()
-    {
-        return $this->belongsToMany('App\Models\Post','likes','user_id','post_id')->withTimestamps();
-    } 
+    public function image()
+  {
+    return $this->belongsTo(Image::class);
+  }
+
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
 }
