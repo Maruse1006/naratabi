@@ -42,14 +42,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function likes()
-    // {
-    //     return $this->belongsToMany('App\Image','likes','user_id','image_id')->withTimestamps();
-    // } 
+    public function likes()
+    {
+        return $this->belongsToMany('App\Image','likes','user_id','image_id')->withTimestamps();
+    } 
 
-    public function likes() {
-        return $this->hasMany('App\Post');
-    }
+    // public function likes() {
+    //     return $this->hasMany('App\Post');
+    // }
  
     public function images() {
         return $this->hasMany('App\Like');

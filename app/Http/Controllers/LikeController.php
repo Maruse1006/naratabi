@@ -14,22 +14,60 @@ class LikeController extends Controller
 {
     public function store(Request $request,$id)
     {
-        $like = New Like();
-       // Log::info($image);
-        $like->users()->attach(Auth::id());
-        $count = $like->users()->count(); //以下追加
-        return response()->json([
-            'count' => $count, 
-        ]);
-        // Auth::user()->like($iId);
-        // return 'ok!'; //レスポンス内容
-    }
+        // $like = new Like;
+        // // $like->users()->attach(Auth::id());
+        //  Log::info($like);
+        // $like->user_id= Auth::id();
+        // $like->image_id = $request->image_id;
+        // $like->save();
+        // return response()->json(['like'=>$like],200);
+        // $count = $like->users()->count(); 
+        // return response()->json([
+        //     'count' => $count, 
+        // ]);
+        // $user= Auth::user();
+        // $defaultLiked=$request->where('user_id',$user->id)->first();
+        // if(conut($defaultLiked)==0){
+        //     $defaultLiked == fault;
+        // }else{
+        //     $defaultLiked == true;
+        // }
 
+        $id = Auth::user()->id;
+        $image_id = $request->id;
+        $like = new Like;
+        $image = Image::findOrFail($image_id);
+
+        // 空でない（既にいいねしている）なら
+        if ($like->like_exist($id, $image_id)) {
+            //likesテーブルのレコードを削除
+            $image = Image::where('id',1)->first();
+       // $like = Like::where('image_id', $image->id)->where('user_id',$user)->first();
+            $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
+        } else {
+            //空（まだ「いいね」していない）ならlikesテーブルに新しいレコードを作成する
+               Like::create([
+              'image_id' => $id,
+              'user_id' => Auth::id(),
+          ]);
+        //    Like::create([
+        //       'image_id' => $id,
+        //       'user_id' => Auth::id(),
+        //   ]);
+        //$likeCount=count(Like::where('image_id',$id)->get());
+    }
+    }
     public function destroy(Request  $request,$id)
     {
-        // $post = Image::find($id);
-        // $post->users()->detach(Auth::id());
-        Auth::user()->unlilikeke($Id);
-        return 'ok!'; //レスポンス内容
+        $user=Auth::user();
+        $image = Image::where('id',1)->first();
+       // $like = Like::where('image_id', $image->id)->where('user_id',$user)->first();
+        $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
+        Log::info($like);
+        $like->delete();
+        session()->flash('success', 'You Unliked the Reply.');
+       // return redirect()->back();
     }
+
+    
 }

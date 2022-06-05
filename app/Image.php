@@ -10,8 +10,8 @@ class Image extends Model
         'title',
         'path',
     ];
-    public function users()
-    {
-        return $this->belongsToMany('App\User')->withTimestamps();
-    }
+    public function likes()
+  {
+    return $this->hasMany(App\Like);
+  }
 }

@@ -176,19 +176,19 @@ public function register(Request $request)
   return response()->json(['user'=>$user],200);
    }
 
- public function review(Request $request) {
+//  public function review(Request $request) {
  
-  $review = new \App\PostReview();
-  $review->post_id = $request->post_id;
-  $review->id = $request->id;
-  //$review->user_id =User::find($request->id);
-  $review->user_id= Auth::id();
-  $review->username =Auth::user()->name;
-  //$review->user_id= $request->user()->id;
-  $review->stars = $request->stars;
-  $review->comment = $request->comment;
-  $result = $review->save();
-  return ['result' => $result];
+//   $review = new \App\PostReview();
+//   $review->post_id = $request->post_id;
+//   $review->id = $request->id;
+//   //$review->user_id =User::find($request->id);
+//   $review->user_id= Auth::id();
+//   $review->username =Auth::user()->name;
+//   //$review->user_id= $request->user()->id;
+//   $review->stars = $request->stars;
+//   $review->comment = $request->comment;
+//   $result = $review->save();
+//   return ['result' => $result];
 
   // $user_id = Auth::user();
 
@@ -200,16 +200,16 @@ public function register(Request $request)
 
   // $result = $review->save();
  }
-  public function store($postId)
-    {
-        Auth::user()->like($postId);
-        return 'ok!'; //レスポンス内容
-    }
+  // public function store($postId)
+  //   {
+  //       Auth::user()->like($postId);
+  //       return 'ok!'; //レスポンス内容
+  //   }
 
-    public function destroy($postId)
-    {
-        Auth::user()->unlilikeke($postId);
-        return 'ok!'; //レスポンス内容
-    }
+  //   public function destroy($postId)
+  //   {
+  //       Auth::user()->unlilikeke($postId);
+  //       return 'ok!'; //レスポンス内容
+  //   }
 
 }

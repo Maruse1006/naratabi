@@ -42,8 +42,7 @@ Route::get('category/post/{id}','PostController@detail');
 Route::post('/register','RegisterController@register');
 
 
-Route::post('/review','PostController@review');
-    
+
 //    Route::group(["middleware" => "api"], function () {
 //    Route::post('/review','PostController@review');
 //    Route::post('/login', 'Auth\LoginController@login');
@@ -59,11 +58,11 @@ Route::group(['middleware' => 'auth:api'], function () {
   Route::post('/dashboard/edit','PostController@update');
   Route::get('/user', 'Auth\LoginController@user');
   Route::post('/review','PostController@review');
+  Route::post('/like/{id}','LikeController@store');
+  Route::post('/unlike/{id}','LikeController@destroy');
 });
 
 Route::post('/logout', 'Auth\LoginController@logout');
 //Route::get('/category/post/{id}/{id}','PostController@list');
 
-Route::post('/like/{id}','LikeController@store');
-Route::post('/unlike/{id}','LikeController@destroy');
 
