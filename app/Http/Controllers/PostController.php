@@ -199,7 +199,7 @@ public function register(Request $request)
   //                   ]);
 
   // $result = $review->save();
- }
+ 
   // public function store($postId)
   //   {
   //       Auth::user()->like($postId);
@@ -211,5 +211,5 @@ public function register(Request $request)
   //       Auth::user()->unlilikeke($postId);
   //       return 'ok!'; //レスポンス内容
   //   }
-
+  
 }

@@ -47,11 +47,25 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Image','likes','user_id','image_id')->withTimestamps();
     } 
 
-    // public function likes() {
-    //     return $this->hasMany('App\Post');
-    // }
+    public function isLike($id)
+    {
+      return $this->likes()->where('image_id',$id)->exists();
+    }
  
-    public function images() {
-        return $this->hasMany('App\Like');
+    public function like($id)
+    {
+      if($this->isLike($id)){
+        //もし既に「いいね」していたら何もしない
+      } else {
+        $this->likes()->attach($id);
+      }
+    }   
+    public function unlike($id)
+    {
+      if($this->isLike($id)){
+        //もし既に「いいね」していたら消す
+        $this->likes()->detach($id);
+      } else {
+      }
     }
 }

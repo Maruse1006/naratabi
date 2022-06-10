@@ -33,23 +33,40 @@ class LikeController extends Controller
         //     $defaultLiked == true;
         // }
 
-        $id = Auth::user()->id;
-        $image_id = $request->id;
+        // $id = Auth::user()->id;
+       // $image_id = $request->id;
         $like = new Like;
-        $image = Image::findOrFail($image_id);
+        // $image = Image::findOrFail($image_id);
+        $user=Auth::user();
+      //  $image = Image::where('id',$image_id)->first();
+        $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
 
         // 空でない（既にいいねしている）なら
-        if ($like->like_exist($id, $image_id)) {
+        if (!$like) {
             //likesテーブルのレコードを削除
-            $image = Image::where('id',1)->first();
-       // $like = Like::where('image_id', $image->id)->where('user_id',$user)->first();
-            $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
-        } else {
+    //         $user=Auth::user();
+    //         $image = Image::where('id',1)->first();
+    //    // $like = Like::where('image_id', $image->id)->where('user_id',$user)->first();
+    //         $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
+    //         Log::info($like);
+    //         $like->delete();
+
+            Like::create([
+                'image_id' => $id,
+                'user_id' => Auth::id(),
+                ]);
+            } else {
+                // $user=Auth::user();
+                // $image = Image::where('id',1)->first();
+           // $like = Like::where('image_id', $image->id)->where('user_id',$user)->first();
+               // $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
+                Log::info($like);
+                $like->delete();
             //空（まだ「いいね」していない）ならlikesテーブルに新しいレコードを作成する
-               Like::create([
-              'image_id' => $id,
-              'user_id' => Auth::id(),
-          ]);
+        //        Like::create([
+        //       'image_id' => $id,
+        //       'user_id' => Auth::id(),
+        //   ]);
         //    Like::create([
         //       'image_id' => $id,
         //       'user_id' => Auth::id(),
@@ -57,17 +74,17 @@ class LikeController extends Controller
         //$likeCount=count(Like::where('image_id',$id)->get());
     }
     }
-    public function destroy(Request  $request,$id)
-    {
-        $user=Auth::user();
-        $image = Image::where('id',1)->first();
-       // $like = Like::where('image_id', $image->id)->where('user_id',$user)->first();
-        $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
-        Log::info($like);
-        $like->delete();
-        session()->flash('success', 'You Unliked the Reply.');
-       // return redirect()->back();
-    }
+    // public function destroy(Request  $request,$id)
+    // {
+    //     $user=Auth::user();
+    //     $image = Image::where('id',1)->first();
+    //    // $like = Like::where('image_id', $image->id)->where('user_id',$user)->first();
+    //     $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
+    //     Log::info($like);
+    //     $like->delete();
+    //     session()->flash('success', 'You Unliked the Reply.');
+    //    // return redirect()->back();
+    // }
 
     
 }

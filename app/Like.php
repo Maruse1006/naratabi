@@ -17,4 +17,18 @@ class Like extends Model
   {
     return $this->belongsTo(User::class);
   }
+  public function like(Request $request,$id)
+  {
+    $exist = Like::where('image_id', $image->id)->where('user_id',$user->id)->get();
+    if (!$exist->isEmpty()) {
+        return true;
+    } else {
+    // レコード（$exist）が存在しないなら
+        return false;
+    }
 }
+
+  
+}
+
+  
