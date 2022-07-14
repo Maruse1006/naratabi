@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Postreview;
+
 class ReviewController extends Controller
 {
     public function review(Request $request)
@@ -26,5 +28,13 @@ class ReviewController extends Controller
         $result = $review->save();
         return ['result' => $result];
        }
+    
+    public function list(Request $request,$id){
+      $post = PostReview::find($id);
+      $review=PostReview::where('post_id',$id)->get();
+      //$review= PostReview::find($id);
+      return response()->json(compact('review'),200);
+     // return response()->json(['review'=>$review],200);
+    }
       
 }

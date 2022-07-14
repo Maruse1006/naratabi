@@ -47,25 +47,26 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Image','likes','user_id','image_id')->withTimestamps();
     } 
 
-    public function isLike($id)
+    public function isLike($imageId)
     {
-      return $this->likes()->where('image_id',$id)->exists();
+      return $this->likes()->where('image_id',$imageId)->exists();
     }
  
-    public function like($id)
+    public function like($imageId)
     {
-      if($this->isLike($id)){
+      if($this->isLike($imageId)){
         //もし既に「いいね」していたら何もしない
+        $this->likes()->detach($imageId);
       } else {
-        $this->likes()->attach($id);
+        $this->likes()->attach($imageId);
       }
     }   
-    public function unlike($id)
-    {
-      if($this->isLike($id)){
-        //もし既に「いいね」していたら消す
-        $this->likes()->detach($id);
-      } else {
-      }
-    }
+    // public function unlike($imageId)
+    // {
+    //   if($this->isLike($imageId)){
+    //     //もし既に「いいね」していたら消す
+    //     $this->likes()->detach($imageId);
+    //   } else {
+    //   }
+    // }
 }
