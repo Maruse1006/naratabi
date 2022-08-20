@@ -12,29 +12,13 @@ use Log;
 
 class LikeController extends Controller
 {
-    // public function store(Request $request,$id)
-    // {
-       
-    // //     $like = new Like;
-    // //     $user=Auth::user();
-    // //   //  $image = Image::where('id',$image_id)->first();
-    // //     $like = Like::where('image_id', $id)->where('user_id',$user->id)->first();
-
-    // //     // 空でない（既にいいねしている）なら
-    // //     if (!$like) {
-
-    // //         Like::create([
-    // //             'image_id' => $id,
-    // //             'user_id' => Auth::id(),
-    // //             ]);
-    // //         } else {
-    
-    // //             Log::info($like);
-    // //             $like->delete();
-    
-       
-    // }
-    // }
+    public function index()
+    {
+        $userId = Auth::id();
+        $posts = Post::withCount(['comments' => function ($query) use ($userId) {
+        $query->where('id', $userId);
+        }])->get();
+    }
 
     public function store($imageId)
     {

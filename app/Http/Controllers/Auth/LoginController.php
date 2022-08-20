@@ -41,7 +41,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        \Log::info('a');
+       // \Log::info('a');
         $this->middleware('guest')->except('logout');
 
     }
@@ -77,6 +77,7 @@ class LoginController extends Controller
 
         $token = auth()->user()->createToken('authToken')->accessToken;
        // Log::info($token);
+    
         return response()->json(['token'=>$token],200);
     }
       

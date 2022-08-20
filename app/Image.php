@@ -12,6 +12,7 @@ class Image extends Model
     ];
     public function likes()
   {
-    return $this->hasMany(App\Like);
+    return $this->belongsToMany('App\User','likes','image_id','user_id')->withTimestamps();
   }
 }
+// return $this->belongsToMany('App\Image','likes','user_id','image_id')->withTimestamps();

@@ -12,6 +12,12 @@ use App\Post;
 
  use App\Image;
 
+ use App\Like;
+
+ //use App\User;
+
+ use App\User;
+
  use Illuminate\Support\Facades\Auth;
 
  //use Intervention\Image\ImageManagerStatic as Image; 
@@ -44,16 +50,37 @@ class PostImageController extends Controller
 
     public function show(Request $request)
     {
+     // if (Auth::check()) {
        $images= Image::all();
-       $user = Auth::user();
-       $id = Auth::id();
-       
+       //$user = Auth::user();
+       //\Log::info($user);
+       $userId = Auth::id();
+       //$userI= $request->id;
+    //    $conut = Image::withCount(['likes' => function ($query) use ($id) {
+    //    $query->where('id', $id);
+    //    }])->get();
+     //  $images= Image::withCount('likes')->take(5)->get();
+       $images=Image::withCount(['likes' => function ($query) use ($userId) {
+       //\Log::info($userId);
+       $query->where('users.id', $userId);
+     
+      }])->get();
+       return response()->json(compact('images'),200);
+    // }else{
+    //     return('/show');
+    
+    // }
+}
+public function showup(Request $request)
+{
+ 
+   $images= Image::all();
 
-        return response()->json(['images'=>$images],200);
-        return response()->json(['user'=>$user],200);
-        return response()->json(['id'=>$id],200);
-    }
+   $images=Image::withCount('likes')->take(5)->get();
+    
 
+   return response()->json(compact('images'),200);
+}
     public function store($postId)
     {
         Auth::user()->like($postId);

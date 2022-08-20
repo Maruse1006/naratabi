@@ -35,7 +35,7 @@ Route::get('/category/{id}','PostController@find');
 
 Route::post('/form/s3','PostImageController@s3');
 
-Route::get('/show','PostImageController@show');
+//Route::get('/show','PostImageController@show');
 Route::get('category/post/{id}','PostController@detail');
 
 //Route::get('/register','PostImageController@register');
@@ -52,11 +52,13 @@ Route::group(['middleware' => 'auth:api'], function () {
  // Route::post('/like/{id}','LikeController@store');
   Route::post('/like/{imageId}','LikeController@store');
   //Route::post('/like/{imageId}','LikeController@destroy');
-  
-  
+  Route::get('/show','PostImageController@show');
 });
+//Route::get('/show','PostImageController@show');
 Route::get('/category/post/review/{id}','ReviewController@list');
 Route::post('/logout', 'Auth\LoginController@logout');
+Route::get('/show/show','PostImageController@showup');
+
 //Route::get('/category/post/{id}/{id}','PostController@list');
 
 

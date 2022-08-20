@@ -53,6 +53,11 @@ class HomeController extends Controller{
     public function index(Request $request)
     {
       $category = Category::all();
+      //$user = $request->id;
+      $user = Auth::user();
+      //$user = $request->user();
+      \Log::info($user);
       return response()->json(['categories'=>$category],200);
+      return response()->json(['user'=>$user],200);
     }
 }

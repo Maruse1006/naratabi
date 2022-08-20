@@ -61,6 +61,11 @@ class User extends Authenticatable
         $this->likes()->attach($imageId);
       }
     }   
+
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
     // public function unlike($imageId)
     // {
     //   if($this->isLike($imageId)){

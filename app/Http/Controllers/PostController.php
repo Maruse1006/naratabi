@@ -130,8 +130,6 @@ public function detail(Request $request,$id)
   $postreviews=Postreview::where('post_id',$post->id)->get();
   //$user = User::where('user_id',$post_id)
   //$user = Postreview::where('user_id',$post->id)->get();
-  
-  return response()->json(compact('post','postreviews','user'),200);
 }
 public function user(User $user){
   $user = $user->getAllusers(auth()->user()->id);
