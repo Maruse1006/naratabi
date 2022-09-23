@@ -23,6 +23,7 @@ class ReviewController extends Controller
         $review = new \App\PostReview();
         $review->post_id = $request->post_id;
         $review->user_id = $request->user()->id;
+        $review->username = $request->user()->name;
         $review->stars = $request->stars;
         $review->comment = $request->comment;
         $result = $review->save();

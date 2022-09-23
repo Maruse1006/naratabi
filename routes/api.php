@@ -48,7 +48,7 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::group(['middleware' => 'auth:api'], function () {
   Route::post('/dashboard/edit','PostController@update');
   Route::get('/user', 'Auth\LoginController@user');
-  Route::post('/review','PostController@review');
+  Route::post('/review','ReviewController@post');
  // Route::post('/like/{id}','LikeController@store');
   Route::post('/like/{imageId}','LikeController@store');
   //Route::post('/like/{imageId}','LikeController@destroy');

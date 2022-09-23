@@ -60,12 +60,12 @@ class PostImageController extends Controller
     //    $query->where('id', $id);
     //    }])->get();
      //  $images= Image::withCount('likes')->take(5)->get();
-       $images=Image::withCount(['likes' => function ($query) use ($userId) {
-       //\Log::info($userId);
-       $query->where('users.id', $userId);
-     
-      }])->get();
+       $images=Image::withCount('likes')->withCount(['likes as isLike' => function ($query) use ($userId) {
+            $query->where('users.id', $userId);     
+       }])->get();
+    //$img=Image::withCount('likes')->take(5)->get();
        return response()->json(compact('images'),200);
+       
     // }else{
     //     return('/show');
     
