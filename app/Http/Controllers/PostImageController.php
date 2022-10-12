@@ -32,8 +32,8 @@ class PostImageController extends Controller
         $disk = Storage::disk('s3');
       
         $image = $request->image;
-
-    
+        \Log::info($image);
+        
         $path = $disk->putFile('images', $image,'public');
 
         $image =new Image();
@@ -50,7 +50,7 @@ class PostImageController extends Controller
 
     public function show(Request $request)
     {
-     // if (Auth::check()) {
+     // if (Auth:s:check()) {
        $images= Image::all();
        //$user = Auth::user();
        //\Log::info($user);
