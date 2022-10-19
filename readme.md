@@ -16,20 +16,21 @@
 <a>カテゴリーによって、検索できるようにしています。寺・神社、自然、宿のカテゴリーから自分の調べたい</a>
 <a> ものに合わせて検索できます。</a>
 　
-・いいね機能
+<a>・いいね機能</a>
 　自分がいいと思ったものに対して、いいねができます。
   他のユーザーがいいねした総数を見ることができるため、
  
-・写真投稿機能
+<a>・写真投稿機能</a>
 
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## 苦労した点
+・ログイン機能
+認証のtokenを保持、発行し、ログインする機能作成に苦労しました。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+
 
 ## Laravel Sponsors
 
