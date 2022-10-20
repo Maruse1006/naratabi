@@ -7,8 +7,9 @@
 
 ## アプリ機能の一覧
 
-❶ホーム画面
-<img width="453" alt="home①" src="https://user-images.githubusercontent.com/58674336/197056462-f6a9eed4-88bf-4cda-9bc8-a3260045f99f.png">
+❶ホーム画面  
+ 
+<img width="453" alt="home①" src="https://user-images.githubusercontent.com/58674336/197056462-f6a9eed4-88bf-4cda-9bc8-a3260045f99f.png">  
 <a>・ログイン機能</a>  
 ユーザー情報を登録して、ログインすることができます。ログイン後は、投稿された奈良の写真　　
 に対して、いいねをつけたり、奈良の写真を投稿することができます。　　
