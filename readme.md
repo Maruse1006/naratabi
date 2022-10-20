@@ -30,10 +30,10 @@
 　自分がいいと思ったものに対して、いいねができます。
   他のユーザーがいいねした総数も見ることができます。
  
-<a>・写真投稿機能</a>
+<a>・写真投稿機能</a>    
 撮影した奈良の写真を投稿することができます。
 
-<a>・レビュー機能</a>  
+<a>・レビュー機能</a>      
 掲載されている奈良の観光名所や宿についての口コミや５段階評価（星の数）で評価することができます。
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
