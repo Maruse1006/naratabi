@@ -30,14 +30,10 @@
 ❸検索結果一覧　　
 
 <img width="455" alt="research" src="https://user-images.githubusercontent.com/58674336/197183473-e5b45d50-e198-4a64-820c-f68d0cb135ad.png">
-
-
-　　
-
-<a>・検索機能</a>  
-<a>カテゴリーによって、検索できるようにしています。寺・神社、自然、宿のカテゴリーから自分の調べたい</a>
-<a> ものに合わせて検索できます。</a>
 　
+<img width="450" alt="postimage" src="https://user-images.githubusercontent.com/58674336/197186778-1db09f14-db22-4d93-a4fe-b3529e8a753c.png">
+
+❹写真投稿機能
 <a>・いいね機能</a>
 　自分がいいと思ったものに対して、いいねができます。
   他のユーザーがいいねした総数も見ることができます。
