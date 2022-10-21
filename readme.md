@@ -15,6 +15,9 @@
 
 <img width="450" alt="login" src="https://user-images.githubusercontent.com/58674336/197067386-761b0561-1832-443d-ba65-13c6e7823207.png">  
 
+❸検索結果一覧　　　
+<img width="455" alt="research" src="https://user-images.githubusercontent.com/58674336/197183473-e5b45d50-e198-4a64-820c-f68d0cb135ad.png">
+
 <a>・ログイン機能</a>  
 ユーザー情報を登録して、ログインすることができます。ログイン後は、投稿された奈良の写真　　
 に対して、いいねをつけたり、奈良の写真を投稿することができます。　　
