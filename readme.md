@@ -50,6 +50,10 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ・ログイン機能
 認証のtokenを保持、発行し、ログインする機能作成に苦労しました。
 
+## 技術・環境
+フロントエンド
+・HTML/CSS/Sass
+・Vue.js/Vuetify/Nuxt.js
 
 
 
