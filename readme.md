@@ -55,6 +55,11 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ・HTML/CSS/Sass
 ・Vue.js/Vuetify/Nuxt.js
 
+バックエンド
+・Laravel
+・PHP
+・PHP
+
 
 
 
