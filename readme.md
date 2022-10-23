@@ -60,6 +60,11 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ・PHP
 ・PHP
 
+## こだわった点
+アプリの管理だけでなく、ユーザーも奈良の情報を発信できるように写真投稿や掲載されているここの観光名所に対して、
+レビュー機能を掲載しました。
+
+
 
 
 
