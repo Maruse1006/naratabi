@@ -44,7 +44,6 @@
 <a>・レビュー機能</a>      
 掲載されている奈良の観光名所や宿についての口コミや５段階評価（星の数）で評価することができます。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## 苦労した点
 ・ログイン機能
