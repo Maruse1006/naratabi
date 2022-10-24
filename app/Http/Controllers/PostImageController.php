@@ -55,11 +55,7 @@ class PostImageController extends Controller
        //$user = Auth::user();
        //\Log::info($user);
        $userId = Auth::id();
-       //$userI= $request->id;
-    //    $conut = Image::withCount(['likes' => function ($query) use ($id) {
-    //    $query->where('id', $id);
-    //    }])->get();
-     //  $images= Image::withCount('likes')->take(5)->get();
+     
        $images=Image::withCount('likes')->withCount(['likes as isLike' => function ($query) use ($userId) {
             $query->where('users.id', $userId);     
        }])->get();
