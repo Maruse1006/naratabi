@@ -65,7 +65,7 @@ class PostImageController extends Controller
     // }else{
     //     return('/show');
     
-    // }
+    // } 
 }
 public function showup(Request $request)
 {
