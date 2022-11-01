@@ -44,6 +44,11 @@
 <a>・レビュー機能</a>      
 掲載されている奈良の観光名所や宿についての口コミや５段階評価（星の数）で評価することができます。
 
+## アプリ機能の一覧 
+
+<img width="1064" alt="er図" src="https://user-images.githubusercontent.com/58674336/199216881-5920b60f-6f99-4769-a0b0-f606c0294ee6.png">
+
+
 
 ## 苦労した点・理解に努めた点
 ・ログイン機能
@@ -57,8 +62,7 @@
   今回の場合だと、likeテーブルが中間テーブルとし、。userテーブルとpostテーブル
   に対する各modelに多対多の記述を行いました。
   
- <img width="1064" alt="er図" src="https://user-images.githubusercontent.com/58674336/199216881-5920b60f-6f99-4769-a0b0-f606c0294ee6.png">
-
+ 
 ## 技術・環境
 フロントエンド
 ・HTML/CSS/Sass
