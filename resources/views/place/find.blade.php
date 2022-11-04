@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheet.css') }}">
   <script src="{{ asset('js/hoge.js') }}"></script>
 </head>
-<div class="hwrapper">
+<div class="hwrapper"> 
 <header>
     なら旅net
    <a class="menuButton" id="menuButton">
