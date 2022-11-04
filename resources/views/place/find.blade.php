@@ -35,7 +35,7 @@
       class="btn btn-primary btn-primary btn-sm">
       <span>{{$item->place}}</span><tr/></a></p>
        <img src="{{$item->img_url}}"  />
-       
+       a
     </div>
    @endforeach
  </div>
