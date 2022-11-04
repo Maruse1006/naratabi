@@ -34,8 +34,8 @@
       <p><a href="{{action('PlaceController@show',[$item->id])}}"
       class="btn btn-primary btn-primary btn-sm">
       <span>{{$item->place}}</span><tr/></a></p>
-       <img src="{{$item->img_url}}"  />
-       a
+       <img src="{{$item->img_url}}"  />　
+       <a href="tel:+"></a>
     </div>
    @endforeach
  </div>
