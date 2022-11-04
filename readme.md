@@ -1,72 +1,89 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# なら旅net
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+## アプリの概要
+奈良県は修学旅行でしか訪れない人が多いとのはないかと思います。奈良県はどうしても、奈良市内の観光名所しか知らない人が多いのが現状です。
+そのような人が奈良を観光目的で訪れた際になかなか目の行き届かない観光スポットを知れるようにこのアプリを作成しました。
+検索機能はもちろんのことですが、ユーザーが写真を投稿したり、観光名所に対して、口コミを投稿することができます。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## アプリ機能の一覧
 
-## Learning Laravel
+❶ホーム画面  
+ 
+<img width="453" alt="home①" src="https://user-images.githubusercontent.com/58674336/197056462-f6a9eed4-88bf-4cda-9bc8-a3260045f99f.png">  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<a>・検索機能</a>  
+<a>カテゴリーによって、検索できるようにしています。寺・神社、自然、宿のカテゴリーから自分の調べたい</a>
+<a> ものに合わせて検索できます。</a>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+❷ログイン画面　　
 
-## Laravel Sponsors
+<img width="450" alt="login" src="https://user-images.githubusercontent.com/58674336/197067386-761b0561-1832-443d-ba65-13c6e7823207.png">  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<a>・ログイン機能</a>  
+ユーザー情報を登録して、ログインすることができます。ログイン後は、投稿された奈良の写真に対して、
+いいねをつけたり、奈良の写真を投稿することができます。　　
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
 
-## Contributing
+<a>・ユーザー登録</a>  
+ユーザー情報を登録できます。　　
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+❸検索結果一覧　　
 
-## Security Vulnerabilities
+<img width="455" alt="research" src="https://user-images.githubusercontent.com/58674336/197183473-e5b45d50-e198-4a64-820c-f68d0cb135ad.png">
+　
+❹写真投稿機能
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<img width="450" alt="postimage" src="https://user-images.githubusercontent.com/58674336/197186778-1db09f14-db22-4d93-a4fe-b3529e8a753c.png">
+<a>・いいね機能</a>
+　自分がいいと思ったものに対して、いいねができます。
+  他のユーザーがいいねした総数も見ることができます。
+ 
+<a>・写真投稿機能</a>    
+撮影した奈良の写真を投稿することができます。
 
-## License
+<a>・レビュー機能</a>      
+掲載されている奈良の観光名所や宿についての口コミや５段階評価（星の数）で評価することができます。
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## テーブル構造
+
+<img width="1064" alt="er図" src="https://user-images.githubusercontent.com/58674336/199216881-5920b60f-6f99-4769-a0b0-f606c0294ee6.png">
+
+
+
+## 苦労した点・理解に努めた点
+・ログイン機能
+　認証のtokenを保持、発行し、ログインする機能作成に苦労しました。
+  また、ログインユーザーとログインしていないユーザーの閲覧を分けるためにmillewareの設定や
+　v-ifを用いたログインの有無による条件分岐を行いました。
+　
+　
+ 
+・modelリレーションについての理解　
+  いいね機能を付け加えるに当たって、likeテーブルを中間テーブルとし、userテーブルとpostテーブル
+  に対する各modelに多対多の記述を行いました。
+  
+ 
+## 技術・環境
+フロントエンド
+・HTML/CSS/Sass
+・Vue.js/Vuetify/Nuxt.js
+
+バックエンド
+・Laravel
+・PHP
+・PHPinit
+
+## こだわった点
+アプリの管理だけでなく、ユーザーも奈良の情報を発信できるように写真投稿や掲載されているここの観光名所に対して、
+レビュー機能を掲載しました。
+
+
+
+
+
+
+
+
