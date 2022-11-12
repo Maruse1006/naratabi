@@ -41,8 +41,7 @@
 
 検索結果一覧　　
 
-<img width="455" alt="research" src="https://user-images.githubusercontent.com/58674336/197183473-e5b45d50-e198-4a64-820c-f68d0cb135ad.png">
-　
+
 
 <a>・レビュー機能</a>      
 掲載されている奈良の観光名所や宿についての口コミや５段階評価（星の数）で評価することができます。
