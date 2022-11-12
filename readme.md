@@ -51,6 +51,23 @@
 
 <img width="1064" alt="er図" src="https://user-images.githubusercontent.com/58674336/199216881-5920b60f-6f99-4769-a0b0-f606c0294ee6.png">
 
+## **技術・環境（**
+
+### フロントエンド
+
+・HTML/CSS/Sass 
+
+・Vue.js/Vuetify/Nuxt.js
+
+### バックエンド
+
+ ・PHP 
+
+・Laravel
+
+・PHPUnit
+
+
 
 
 ## 苦労した点・理解に努めた点
