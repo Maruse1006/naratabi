@@ -53,7 +53,7 @@
 <img width="1064" alt="er図" src="https://user-images.githubusercontent.com/58674336/199216881-5920b60f-6f99-4769-a0b0-f606c0294ee6.png">
 
 ## **技術・環境**
-<img src="https://user-images.githubusercontent.com/58674336/203537713-705b4e5f-68ee-411d-8fbc-d0180049c4f5.png">
+<img src="https://user-images.githubusercontent.com/58674336/203543014-f247308a-8445-4f00-a902-bea0c2e837f7.png">
 
 ### フロントエンド
 
