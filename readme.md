@@ -39,9 +39,11 @@
 
 カテゴリーによって、検索できるようにしています。寺・神社、自然、宿のカテゴリーから自分の調べたい ものに合わせて検索できます。
 
-<img width="450" alt="login" src="https://user-images.githubusercontent.com/58674336/197067386-761b0561-1832-443d-ba65-13c6e7823207.png">  
+検索結果一覧
 
-検索結果一覧　　
+<img width="450" alt="login" src="https://user-images.githubusercontent.com/58674336/203547632-391a7c92-cc25-4ff5-ac1a-98b77e49eebe.png">  
+
+　　
 
 
 
