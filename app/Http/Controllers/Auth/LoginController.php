@@ -86,7 +86,7 @@ class LoginController extends Controller
        
         $id = Auth()->id();
         $user= Auth::user()->name;
-       // \Log::info($user);
+        \Log::info($user);
         return response()->json(compact('id','user'),200);
     }
 
