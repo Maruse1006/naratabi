@@ -16,7 +16,7 @@
       <div> </div>
     </a>
   </header>
-</div>
+</div> 
  <div class="img">
  <img src="{{asset('img/tokae.jpg')}}" width="100%" height="150"  />
 </div>
