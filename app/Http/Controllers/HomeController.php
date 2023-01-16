@@ -52,6 +52,7 @@ class HomeController extends Controller{
 
     public function index(Request $request)
     {
+     
       $category = Category::all();
       \Log::info($category);
       //$user = $request->id;
