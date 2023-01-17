@@ -13,7 +13,7 @@ class CreatePostReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('post_reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('post_id')->default(0)->comment('商品ID');
             $table->unsignedBigInteger('user_id')->default(0)->comment('ユーザーID');
