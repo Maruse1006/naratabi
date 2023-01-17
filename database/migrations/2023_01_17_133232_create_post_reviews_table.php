@@ -20,7 +20,6 @@ class CreatePostReviewsTable extends Migration
             $table->integer('stars')->default(0)->comment('星');
             $table->text('comment')->comment('コメント');
             $table->timestamps();
-    
             $table->foreign('post_id')->references('id')->on('posts');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unique(['post_id', 'user_id']);
@@ -34,6 +33,6 @@ class CreatePostReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('=post_reviews_table');
+        Schema::dropIfExists('post_reviews');
     }
 }
