@@ -27,10 +27,6 @@
 
  use Log;
 
- //use App\Post_review;
-
- //use App\Post_review;
-
  
 
  //use App\Post;
