@@ -123,7 +123,7 @@ public function find(Request $request,$id)
 public function detail(Request $request,$id)
 {
   $post = Post::find($id);
-  $postreviews=Postreview::where('post_id',$post->id)->get();
+  $postreview=Postreview::where('post_id',$post->id)->get();
   //$user = User::where('user_id',$post_id)
   //$user = Postreview::where('user_id',$post->id)->get();
   return response()->json(compact('post','postreview'),200);
