@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Postreview extends Model
+class PostReview extends Model
 {
 
     protected $fillable = [
