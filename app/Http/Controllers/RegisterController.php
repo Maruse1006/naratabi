@@ -32,20 +32,17 @@ class RegisterController extends Controller
 //   $path = $disk->putFile('images', $user,'public');   
 //   \Log::info($path);   
     
-//    $user->name = $request->name;
-//    \Log::info($user->name);
-//    $user->email= $request->email;　
-//    \Log::info($user->email);
-//    $user->password= Hash::make($request->password);
-//    \Log::info($user->password);
-//    $user->path=$path;
-//   \Log::info($user->path);
-//    $user->save();
-//    \Log::info($user->save);
-$user->name = $request->name;
-$user->email= $request->email;
-$user->password =Hash::make($request->password);
-$user->save();
+   $user->name = $request->name;
+   \Log::info($user->name);
+   $user->email= $request->email;　
+   \Log::info($user->email);
+   $user->password= Hash::make($request->password);
+   \Log::info($user->password);
+   $user->path=$path;
+  \Log::info($user->path);
+   $user->save();
+   \Log::info($user->save);
+   
    
    return response()->json(['response'=>$user],200);
    
