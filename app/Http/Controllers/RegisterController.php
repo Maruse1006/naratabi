@@ -25,7 +25,7 @@ class RegisterController extends Controller
   $disk = Storage::disk('s3');
   $image = $request->image; 
   $path = $disk->putFile('images', $image,'public');   
-  \Log::info($path);
+//   \Log::info($path);
    // $user = new User();
 //    $disk = Storage::disk('s3');
   
@@ -33,17 +33,15 @@ class RegisterController extends Controller
 //   \Log::info($path);   
     
    $user->name = $request->name;
-   \Log::info($user->name);
+   // \Log::info($user->name);
    $user->email= $request->email;　
-   \Log::info($user->email);
+   // \Log::info($user->email);
    $user->password= Hash::make($request->password);
-   \Log::info($user->password);
+   // \Log::info($user->password);
    $user->path=$path;
-  \Log::info($user->path);
+//   \Log::info($user->path);
    $user->save();
-   \Log::info($user->save);
-   
-   
+   // \Log::info($user->save);
    return response()->json(['response'=>$user],200);
    
    
