@@ -24,22 +24,12 @@ class RegisterController extends Controller
   $user = new User();
   $disk = Storage::disk('s3');
   $image = $request->image; 
-  $path = $disk->putFile('images', $image,'public');   
-  \Log::info($path);
-   // $user = new User();
-//    $disk = Storage::disk('s3');
-  
-//   $path = $disk->putFile('images', $user,'public');   
-//   \Log::info($path);   
-    
+  $path = $disk->putFile('images', $image,'public');
+  $user->path=$path;
    $user->name = $request->name;
-  
-   $user->email= $request->email;　
-   \Log::info($user->email);
-   $user->password= Hash::make($request->password);
-   
-   $user->path=$path;
-  
+   $user->email= $request->email;
+   $user->password =Hash::make($request->password);
+   $user->save();
    $user->save();
    
    
