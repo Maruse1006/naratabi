@@ -44,7 +44,7 @@ class User extends Authenticatable
 
     public function likes()
     {
-        return $this->belongsToMany('App\Image','like','user_id','image_id')->withTimestamps();
+        return $this->belongsToMany('App\Image','likes','user_id','image_id')->withTimestamps();
     } 
 
     public function isLike($imageId)
