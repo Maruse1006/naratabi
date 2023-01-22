@@ -20,7 +20,7 @@ class ReviewController extends Controller
           return;
       }
       
-        $review = new \App\PostReview();
+        $review = new \App\Postreview();
         $review->post_id = $request->post_id;
         $review->user_id = $request->user()->id;
         $review->username = $request->user()->name;
