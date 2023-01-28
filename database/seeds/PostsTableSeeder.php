@@ -32,7 +32,7 @@ class PostsTableSeeder extends Seeder
           'access'=>'JR 奈良駅 六条山行バス17分 「唐招提寺」下車すぐ、近鉄 西ノ京駅 徒歩8分',
           'official_url'=>'https://toshodaiji.jp/sitemap.html',
           'googlemap'=>'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.173757782821!2d135.78268311508722!3d34.67556384207204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60013b040778f7e9%3A0x57c638784fa5da2e!2z5ZSQ5oub5o-Q5a-6!5e0!3m2!1sja!2sjp!4v1674869566301!5m2!1sja!2sjp',
-          'category_id'=>'3',
+          'category_id'=>'1',
         ],
         ];
         DB::table('posts')->insert($data);
