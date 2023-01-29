@@ -14,7 +14,9 @@ class AddAreaNameTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            $table->string('area_name');
+            $table->string('area_img');
+            
         });
     }
 
