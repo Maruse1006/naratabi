@@ -7,7 +7,6 @@ use App\Place;
 use App\Gift;
 
 
-
 use App\Category;
 
 use Illuminate\Http\Request;
