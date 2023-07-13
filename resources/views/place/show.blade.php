@@ -99,7 +99,7 @@ span{
   font-family:serif;
 }
 p{
-  color:#D75730;
+ 
   border-bottom:solid 3px;
 }
 </style>
